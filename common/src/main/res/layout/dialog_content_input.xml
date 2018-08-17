@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/edit1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/px_40"
+        android:layout_marginEnd="@dimen/px_40"
+        android:layout_marginStart="@dimen/px_40"
+        android:layout_marginTop="@dimen/px_10"
+        android:background="@drawable/stroke_corners_gray"
+        android:gravity="top|start"
+        android:inputType="text"
+        android:minHeight="@dimen/px_230"
+        android:padding="@dimen/px_20"
+        android:scrollbars="vertical"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/px_45">
+
+        <requestFocus />
+    </EditText>
+</FrameLayout>

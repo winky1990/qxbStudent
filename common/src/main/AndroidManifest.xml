@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.qxb.student.common">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="RONG_CLOUD_APP_KEY"
+            android:value="kj7swf8o7tpb2" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.qxb.student.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/rc_file_path" />
+        </provider>
+
+        <activity
+            android:name=".basics.NavHostActivity"
+            android:label="" />
+        <activity
+            android:name=".rong.ChatActivity"
+            android:label="" />
+        <activity
+            android:name=".basics.WebActivity"
+            android:hardwareAccelerated="true"
+            android:label="" />
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:label="" />
+        <activity
+            android:name=".basics.VideoPlayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="landscape" />
+    </application>
+
+</manifest>

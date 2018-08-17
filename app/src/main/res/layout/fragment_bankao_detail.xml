@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="banKao"
+            type="com.qxb.student.common.module.bean.BaseNews" />
+
+        <variable
+            name="commentNum"
+            type="Integer" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorDivider"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/include_school"
+            layout="@layout/header_web_school" />
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:scrollbars="none">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="vertical">
+
+                <com.qxb.student.common.view.web.WebView
+                    android:id="@+id/webView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:id="@+id/commentCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorDivider"
+                    android:paddingBottom="@dimen/px_20"
+                    android:paddingEnd="@dimen/px_40"
+                    android:paddingStart="@dimen/px_40"
+                    android:paddingTop="@dimen/px_40"
+                    android:text="@string/bankao_comment_count" />
+
+                <include layout="@layout/view_list" />
+
+                <include
+                    layout="@layout/empty_bankao_comment"
+                    android:visibility="@{commentNum == 0 ? View.VISIBLE : View.GONE}" />
+
+                <TextView
+                    android:id="@+id/text3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/px_30"
+                    android:paddingTop="@dimen/px_30"
+                    android:text="@string/hint_more"
+                    android:visibility="@{commentNum > 5 ? View.VISIBLE : View.GONE}" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/px_30"
+                    android:paddingTop="@dimen/px_30"
+                    android:visibility="@{commentNum &gt; 0 &amp;&amp; commentNum &lt;= 5 ? View.VISIBLE : View.GONE}">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/px_3"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/px_40"
+                        android:layout_marginStart="@dimen/px_40"
+                        android:layout_toEndOf="@+id/text"
+                        android:background="@color/colorDivider" />
+
+                    <TextView
+                        android:id="@+id/text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/hint_no_more"
+                        android:textColor="@color/colorDesc"
+                        android:textSize="@dimen/px_40" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/px_3"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/px_40"
+                        android:layout_marginStart="@dimen/px_40"
+                        android:layout_toStartOf="@+id/text"
+                        android:background="@color/colorDivider" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/px_20">
+
+            <TextView
+                android:id="@+id/send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/shape_darker_gray_10"
+                android:gravity="center"
+                android:paddingBottom="@dimen/px_20"
+                android:paddingEnd="@dimen/px_30"
+                android:paddingStart="@dimen/px_30"
+                android:paddingTop="@dimen/px_20"
+                android:text="@string/hint_send"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/px_35" />
+
+            <ImageView
+                android:id="@+id/collect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/px_20"
+                android:layout_marginStart="@dimen/px_20"
+                android:layout_toStartOf="@id/send"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:contentDescription="@string/hint_not_describe"
+                android:focusable="true"
+                android:padding="@dimen/px_10"
+                app:srcCompat="@drawable/collect" />
+
+            <EditText
+                android:id="@+id/edit1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/px_10"
+                android:layout_toStartOf="@id/collect"
+                android:background="@drawable/stroke_gray_20"
+                android:gravity="start|top"
+                android:hint="@string/hint_bankao_edit"
+                android:inputType="textMultiLine"
+                android:maxLength="200"
+                android:paddingBottom="@dimen/px_20"
+                android:paddingEnd="@dimen/px_20"
+                android:paddingStart="@dimen/px_20"
+                android:paddingTop="@dimen/px_20"
+                android:scrollHorizontally="false"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/darker_gray"
+                android:textSize="@dimen/px_40" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</layout>

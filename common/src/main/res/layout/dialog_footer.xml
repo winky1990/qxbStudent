@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/px_200"
+    android:background="@drawable/shape_top_divider"
+    android:orientation="horizontal"
+    android:visibility="visible">
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="@dimen/px_0"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:paddingBottom="@dimen/px_30"
+        android:paddingTop="@dimen/px_30"
+        android:textColor="@color/colorDesc"
+        android:textSize="@dimen/px_45"
+        android:visibility="visible" />
+
+    <View
+        android:layout_width="@dimen/px_2"
+        android:layout_height="match_parent"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="@dimen/px_0"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:paddingBottom="@dimen/px_30"
+        android:paddingTop="@dimen/px_30"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/px_45"
+        android:visibility="visible" />
+
+</LinearLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!--测评-->
+    <fragment
+        android:id="@+id/nav_assess_home"
+        android:name="com.qxb.student.ui.home.assess.CharacterAssessFragment" />
+
+    <fragment
+        android:id="@+id/nav_assess_mbti_start"
+        android:name="com.qxb.student.ui.home.assess.MBTIStartFragment" />
+
+    <fragment
+        android:id="@+id/nav_assess_hollander_start"
+        android:name="com.qxb.student.ui.home.assess.HollanderStartFragment" />
+</navigation>

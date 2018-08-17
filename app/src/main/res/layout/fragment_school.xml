@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.qxb.student.R" />
+
+        <variable
+            name="school"
+            type="com.qxb.student.common.module.bean.SchoolDetail" />
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsingToolbarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:collapsedTitleGravity="top|center_horizontal"
+                app:collapsedTitleTextAppearance="@style/collapsedTitleText"
+                app:contentScrim="@drawable/shape_bottom_divider"
+                app:expandedTitleMarginStart="@dimen/px_250"
+                app:expandedTitleMarginTop="@dimen/px_530"
+                app:expandedTitleTextAppearance="@style/expandedTitleText"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:scrimAnimationDuration="0"
+                app:titleEnabled="false"
+                app:toolbarId="@id/toolbar">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorDivider"
+                    android:orientation="vertical"
+                    app:layout_collapseParallaxMultiplier="0.7">
+
+                    <include
+                        android:id="@+id/include_header"
+                        layout="@layout/header_school" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/px_20"
+                        android:layout_marginTop="@dimen/px_2"
+                        android:background="@android:color/white"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:id="@+id/layout1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:paddingBottom="@dimen/px_40"
+                            android:paddingTop="@dimen/px_40">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:drawablePadding="@dimen/px_30"
+                                android:drawableStart="@mipmap/sch_detail_consult"
+                                android:text="@string/hint_consultation" />
+                        </FrameLayout>
+
+                        <View
+                            android:layout_width="@dimen/px_2"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorDivider" />
+
+                        <RelativeLayout
+                            android:id="@+id/layout2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true">
+
+                            <TextView
+                                android:id="@+id/tag"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:drawablePadding="@dimen/px_30"
+                                android:drawableStart="@mipmap/sch_detail_baoming"
+                                android:gravity="center"
+                                android:paddingBottom="@dimen/px_40"
+                                android:paddingTop="@dimen/px_40"
+                                android:text="@{school.is_reg ? R.string.hint_sign_on : R.string.hint_sign_up}" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@id/tag"
+                                android:contentDescription="@string/hint_not_describe"
+                                android:src="@mipmap/fire" />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="@dimen/px_2"
+                            android:layout_height="match_parent"
+                            android:background="@color/colorDivider" />
+
+                        <FrameLayout
+                            android:id="@+id/layout3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:paddingBottom="@dimen/px_40"
+                            android:paddingTop="@dimen/px_40">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:drawablePadding="@dimen/px_30"
+                                android:drawableStart="@{school.is_att ? @drawable/sch_detail_gz : @drawable/sch_detail_gzn}"
+                                android:text="@string/hint_concern" />
+                        </FrameLayout>
+                    </LinearLayout>
+
+                    <include
+                        android:id="@+id/include_video"
+                        layout="@layout/header_school_video" />
+
+                </LinearLayout>
+
+                <include layout="@layout/view_toolbar" />
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/px_20"
+                android:layout_marginEnd="@dimen/px_50"
+                android:layout_marginStart="@dimen/px_50"
+                android:layout_marginTop="@dimen/px_20"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radioButton1"
+                    style="@style/NavigationItem.RecomSchool"
+                    android:background="@drawable/school_radio_left"
+                    android:text="@string/school_major" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    style="@style/NavigationItem.RecomSchool"
+                    android:background="@drawable/school_radio_middle"
+                    android:text="@string/school_intro" />
+
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    style="@style/NavigationItem.RecomSchool"
+                    android:background="@drawable/school_radio_right"
+                    android:text="@string/school_conduct"/>
+            </RadioGroup>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </android.support.design.widget.CoordinatorLayout>
+</layout>

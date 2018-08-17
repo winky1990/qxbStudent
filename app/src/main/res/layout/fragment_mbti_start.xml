@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/azure"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/px_50">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/px_10"
+            android:gravity="center_horizontal"
+            android:text="@string/hint_mbti_top"
+            android:textColor="@color/deep_blue"
+            android:textSize="@dimen/px_55" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/px_700"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/px_70"
+            android:layout_marginTop="@dimen/px_50"
+            android:contentDescription="@string/hint_not_describe"
+            android:src="@mipmap/cs_center_bg" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/px_120"
+            android:layout_marginRight="@dimen/px_120"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/px_8"
+            android:text="@string/hint_mbti_desc"
+            android:textColor="@color/colorDesc"
+            android:textSize="@dimen/px_45" />
+
+
+        <Button
+            android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/px_200"
+            android:layout_marginRight="@dimen/px_200"
+            android:layout_marginTop="@dimen/px_70"
+            android:background="@color/orange"
+            android:gravity="center"
+            android:text="@string/hint_mbti_start"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/px_50" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/px_40"
+            android:text="@string/hint_mbti_bottom"
+            android:textColor="@color/colorDesc"
+            android:textSize="@dimen/px_45" />
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

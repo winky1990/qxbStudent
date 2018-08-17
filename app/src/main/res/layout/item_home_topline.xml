@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:padding="@dimen/px_30">
+
+    <ImageView
+        android:id="@+id/tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/hint_not_describe"
+        android:src="@mipmap/qiu_xue_tou_tiao" />
+
+    <ViewFlipper
+        android:id="@+id/marqueeFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/px_10"
+        android:layout_toEndOf="@id/tag"
+        android:autoStart="true"
+        android:background="#fff"
+        android:flipInterval="5000"
+        android:inAnimation="@anim/marquee_in"
+        android:outAnimation="@anim/marquee_out" />
+</RelativeLayout>

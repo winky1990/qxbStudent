@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="school"
+            type="com.qxb.student.common.module.bean.RecomSchool" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="@dimen/px_10">
+
+        <ImageView
+            android:id="@+id/image"
+            roundImageUrl="@{school.logoRealPath}"
+            android:layout_width="@dimen/px_120"
+            android:layout_height="@dimen/px_120"
+            android:contentDescription="@string/hint_not_describe"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/px_20"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="2"
+            android:text="@{school.school_name}"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/px_35" />
+    </LinearLayout>
+
+</layout>
