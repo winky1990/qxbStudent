@@ -53,13 +53,13 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/px_2"
-        android:background="@color/tv_line_color" />
+        android:background="@color/colorDivider" />
 
     <View
         android:id="@+id/view1"
         android:layout_width="match_parent"
         android:layout_height="@dimen/px_18"
-        android:background="@color/tv_line_color" />
+        android:background="@color/colorDivider" />
 
 
 </LinearLayout>
