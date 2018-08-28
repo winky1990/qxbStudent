@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ import com.qxb.student.common.module.bean.AssessQuestion;
 import com.qxb.student.common.utils.AssetUtils;
 import com.qxb.student.common.utils.JsonUtils;
 import com.qxb.student.common.utils.NavigationUtils;
+import com.qxb.student.common.utils.SysUtils;
 import com.qxb.student.common.utils.ToastUtils;
 import com.qxb.student.common.view.abslist.adapter.AbsAdapter;
 
@@ -54,23 +56,24 @@ public class AssessProblemFragment extends AbsExpandFragment {
 
     @Override
     public void init(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        String json = null;
+        String json;
         if (getArguments() != null) {
             json = AssetUtils.getInstance().readFile(getContext(), getArguments().getString(TAG));
         } else {
-            NavigationUtils.getInstance().goBack(this);
+            onBackPressed();
             return;
         }
         holder = new Holder(view);
+        holder.layout1.setPadding(0, SysUtils.getInstance().getStatusHeight(), 0, 0);
         holder.listView.setAdapter(adapter = new AbsAdapter<AssessAnswer>(getContext(), R.layout.item_assess_problem) {
             @Override
             protected void bindView(View view, int position, AssessAnswer item) {
                 TextView textView = view.findViewById(R.id.text1);
                 textView.setText(item.getAnswer());
                 if (item.isCheck()) {
-                    textView.setTextColor(ContextCompat.getColor(getContext(),R.color.colorAccent));
+                    textView.setTextColor(ContextCompat.getColor(getContext(), R.color.colorAccent));
                 } else {
-                    textView.setTextColor(ContextCompat.getColor(getContext(),R.color.colorDesc));
+                    textView.setTextColor(ContextCompat.getColor(getContext(), R.color.colorDesc));
                 }
             }
         });
@@ -81,7 +84,7 @@ public class AssessProblemFragment extends AbsExpandFragment {
                     ToastUtils.toast(R.string.hint_frequent_operation);
                     return;
                 }
-                setCurrentQuestion(i + 2);
+                setCurrentQuestion(position + 1);
             }
         });
 
@@ -98,7 +101,7 @@ public class AssessProblemFragment extends AbsExpandFragment {
         synchronized (Config.LOCK) {
             AssessQuestion question = questionList.get(position);
             holder.progressBar.setProgress(position);
-            holder.text1.setText(position + "/" + questionList.size());
+            holder.text1.setText(String.format(getString(R.string.previous_problem_nav), position, questionList.size()));
             holder.text3.setText(question.getQuestion());
             adapter.clear();
             adapter.addCollection(question.getAnswers());
@@ -134,6 +137,7 @@ public class AssessProblemFragment extends AbsExpandFragment {
     };
 
     class Holder {
+        LinearLayout layout1;
         ProgressBar progressBar;
         TextView text1;
         TextView text2;
@@ -142,6 +146,7 @@ public class AssessProblemFragment extends AbsExpandFragment {
         TextView text6;
 
         Holder(View view) {
+            layout1 = view.findViewById(R.id.layout1);
             progressBar = view.findViewById(R.id.progressBar1);
             text1 = view.findViewById(R.id.text1);
             text2 = view.findViewById(R.id.text2);

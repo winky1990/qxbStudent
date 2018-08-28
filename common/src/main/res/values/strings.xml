@@ -176,6 +176,7 @@
     <string name="previous_problem">上一题</string>
     <string name="answer_a">A:%1$s</string>
     <string name="answer_b">B:%1$s</string>
+    <string name="previous_problem_nav">%1$d/%2$d</string>
 
     <string name="hint_room_failed">连接聊天系统失败，请退出登录重试</string>
     <string name="hint_me_evaluation">已对本次服务做出了评价</string>

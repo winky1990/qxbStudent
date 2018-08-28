@@ -42,7 +42,7 @@ public class NavFragment extends Fragment implements NavHost {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        final Context context = requireContext();
+        final Context context = getContext();
 
         mNavController = new NavController(context);
         mNavController.getNavigatorProvider().addNavigator(createFragmentNavigator());
@@ -85,7 +85,7 @@ public class NavFragment extends Fragment implements NavHost {
 
     @NonNull
     protected Navigator<? extends FragmentNavigator.Destination> createFragmentNavigator() {
-        return new FragmentNavigator(requireContext(), getChildFragmentManager(), getId());
+        return new FragmentNavigator(getContext(), getChildFragmentManager(), getId());
     }
 
     @Nullable

@@ -1,56 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <com.qxb.student.common.view.Toolbar
+    <LinearLayout
+        android:id="@+id/layout1"
         android:layout_width="match_parent"
         android:layout_height="@dimen/px_110"
         android:background="@drawable/shape_bottom_divider"
-        app:contentInsetEnd="@dimen/px_0"
-        app:contentInsetStart="@dimen/px_0">
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="@dimen/px_0"
+            android:layout_height="@dimen/px_10"
+            android:layout_marginEnd="@dimen/px_30"
+            android:layout_marginStart="@dimen/px_30"
+            android:layout_weight="5"
+            android:progressDrawable="@drawable/shape_assess" />
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="@dimen/px_0"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/px_45" />
 
-            <ProgressBar
-                android:id="@+id/progressBar1"
-                style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
-                android:layout_width="@dimen/px_0"
-                android:layout_height="@dimen/px_10"
-                android:layout_marginEnd="@dimen/px_30"
-                android:layout_marginStart="@dimen/px_30"
-                android:layout_weight="5"
-                android:progressDrawable="@drawable/shape_assess" />
-
-            <TextView
-                android:id="@+id/text1"
-                android:layout_width="@dimen/px_0"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textSize="@dimen/px_45" />
-
-            <TextView
-                android:id="@+id/text2"
-                android:layout_width="@dimen/px_0"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/cancel"
-                android:textSize="@dimen/px_45" />
-        </LinearLayout>
-
-    </com.qxb.student.common.view.Toolbar>
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="@dimen/px_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textSize="@dimen/px_45" />
+    </LinearLayout>
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/layout1"
         android:fillViewport="true"
         android:scrollbars="none">
 
@@ -87,7 +79,8 @@
                 android:layout_centerInParent="true"
                 android:layout_marginEnd="@dimen/px_50"
                 android:layout_marginStart="@dimen/px_50"
-                android:dividerHeight="@dimen/px_0" />
+                android:divider="@android:color/transparent"
+                android:dividerHeight="@dimen/px_40" />
 
             <TextView
                 android:id="@+id/text6"
@@ -108,4 +101,5 @@
         </RelativeLayout>
 
     </android.support.v4.widget.NestedScrollView>
-</LinearLayout>
+</RelativeLayout>
+

@@ -149,7 +149,7 @@ public class FunctionViewPagerAdapter extends PagerAdapter {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (MultiClickUtil.isFastClick()) {
-                    FunctionHelper.jump(context, adapter.getItem(position));
+                    FunctionHelper.getInstance().jump(context, adapter.getItem(position));
                 }
             }
         });

@@ -1,11 +1,13 @@
 package com.qxb.student.common.basics;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -35,8 +37,8 @@ public abstract class BaseFragment extends Fragment implements IBinding {
     private String title;
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
+    public void onAttach(Context context) {
+        super.onAttach(context);
         weakReference = new WeakReference<Fragment>(this);
     }
 
@@ -160,5 +162,11 @@ public abstract class BaseFragment extends Fragment implements IBinding {
 
     public void dissWaitingDialog() {
         SimpleDialog.with(getActivity()).cancle();
+    }
+
+    public void onBackPressed() {
+        if (!NavigationUtils.getInstance().goBack(getFragment())) {
+            ActivityCompat.finishAfterTransition(getActivity());
+        }
     }
 }

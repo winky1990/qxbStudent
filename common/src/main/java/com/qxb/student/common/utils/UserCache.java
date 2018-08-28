@@ -74,6 +74,10 @@ public class UserCache {
         return userLiveData.getValue();
     }
 
+    public boolean isLogin() {
+        return getUser() != null;
+    }
+
     public String getUserId() {
         return String.valueOf(getUser() == null ? "" : getUser().getId());
     }

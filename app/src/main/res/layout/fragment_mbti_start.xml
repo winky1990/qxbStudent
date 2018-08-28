@@ -49,7 +49,7 @@
             android:layout_marginLeft="@dimen/px_200"
             android:layout_marginRight="@dimen/px_200"
             android:layout_marginTop="@dimen/px_70"
-            android:background="@color/orange"
+            android:background="@drawable/btn_orange"
             android:gravity="center"
             android:text="@string/hint_mbti_start"
             android:textColor="@android:color/white"
