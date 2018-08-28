@@ -1,0 +1,842 @@
+[
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": ""
+      },
+      {
+        "answer": "否",
+        "score": "S"
+      }
+    ],
+    "id": 95,
+    "question": "我喜欢把一件事情做完后再做另一件事。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "R"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 96,
+    "question": "在工作中我喜欢独自筹划，不愿受别人干涉。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": ""
+      },
+      {
+        "answer": "否",
+        "score": "E"
+      }
+    ],
+    "id": 97,
+    "question": "在集体讨论中，我往往保持沉默。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "A"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 98,
+    "question": "我喜欢做戏剧、音乐、歌舞、新闻采访等方面的工作。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": ""
+      },
+      {
+        "answer": "否",
+        "score": "C"
+      }
+    ],
+    "id": 99,
+    "question": "每次写信我都一挥而就，不再重复。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "I"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 100,
+    "question": "我经常不停地思考某一问题，直到想出正确的答案。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "C"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 101,
+    "question": "对别人借我的和我借别人的东西，我都能记得很清楚。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "I"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 102,
+    "question": "我喜欢抽象思维的工作，不喜欢动手的工作。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "A"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 103,
+    "question": "我喜欢成为人们注意的焦点。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "A"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 104,
+    "question": "我喜欢不时地夸耀一下自己取得的好成就。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "E"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 105,
+    "question": "我曾经渴望有机会参加探险。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": ""
+      },
+      {
+        "answer": "否",
+        "score": "S"
+      }
+    ],
+    "id": 106,
+    "question": "当我一个独处时，会感到更愉快。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "R"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 107,
+    "question": "我喜欢在做事情前，对此事情做出细致的安排。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": ""
+      },
+      {
+        "answer": "否",
+        "score": "R"
+      }
+    ],
+    "id": 108,
+    "question": "我讨厌修理自行车、电器一类的工作。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": ""
+      },
+      {
+        "answer": "否",
+        "score": "S"
+      }
+    ],
+    "id": 109,
+    "question": "我喜欢参加各种各样的聚会。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": ""
+      },
+      {
+        "answer": "否",
+        "score": "E"
+      }
+    ],
+    "id": 110,
+    "question": "我愿意从事虽然工资少、但是比较稳定的职业。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "A"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 111,
+    "question": "音乐能使我陶醉。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": ""
+      },
+      {
+        "answer": "否",
+        "score": "C"
+      }
+    ],
+    "id": 112,
+    "question": "我办事很少思前想后。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "C"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 113,
+    "question": "我喜欢经常请示上级。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "I"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 114,
+    "question": "我喜欢需要运用智力的游戏。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": ""
+      },
+      {
+        "answer": "否",
+        "score": "I"
+      }
+    ],
+    "id": 115,
+    "question": "我很难做那种需要持续集中注意力的工作。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "R"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 116,
+    "question": "我喜欢亲自动手制作一些东西，从中得到乐趣。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": ""
+      },
+      {
+        "answer": "否",
+        "score": "R"
+      }
+    ],
+    "id": 117,
+    "question": "我的动手能力很差。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "E"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 118,
+    "question": "和不熟悉的人交谈对我来说毫不困难。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": ""
+      },
+      {
+        "answer": "否",
+        "score": "E"
+      }
+    ],
+    "id": 119,
+    "question": "和别人谈判时，我总是很容易放弃自己的观点。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "S"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 120,
+    "question": "我很容易结识同性朋友。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": ""
+      },
+      {
+        "answer": "否",
+        "score": "S"
+      }
+    ],
+    "id": 121,
+    "question": "对于社会问题，我通常持中庸的态度。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "E"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 122,
+    "question": "当我开始做一件事情后，即使碰到再多的困难，我也要执著地干下去。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "C"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 123,
+    "question": "我是一个沉静而不易动感情的人。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "I"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 124,
+    "question": "当我工作时，我喜欢避免干扰。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "I"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 125,
+    "question": "我的理想是当一名科学家。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": ""
+      },
+      {
+        "answer": "否",
+        "score": "A"
+      }
+    ],
+    "id": 126,
+    "question": "与言情小说相比，我更喜欢推理小说。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "A"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 127,
+    "question": "有些人太霸道，有时明明知道他们是对的，也要和他们对着干。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "A"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 128,
+    "question": "我爱幻想。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "E"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 129,
+    "question": "我总是主动地向别人提出自己的建议。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "R"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 130,
+    "question": "我喜欢使用榔头一类的工具。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "S"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 131,
+    "question": "我乐于解除别人的痛苦。 "
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "E"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 132,
+    "question": "我更喜欢自己下了赌注的比赛或游戏。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "C"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 133,
+    "question": "我喜欢按部就班地完成要做的工作。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": ""
+      },
+      {
+        "answer": "否",
+        "score": "C"
+      }
+    ],
+    "id": 134,
+    "question": "我希望能经常换不同的工作来做。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "C"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 135,
+    "question": "我总留有充裕的时间去赴约会。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "I"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 136,
+    "question": "我喜欢阅读自然科学方面的书籍和杂志。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "R"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 137,
+    "question": "如果掌握一门手艺并能以此为生，我会感到非常满意。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": ""
+      },
+      {
+        "answer": "否",
+        "score": "R"
+      }
+    ],
+    "id": 138,
+    "question": "我曾渴望当一名汽车司机。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": ""
+      },
+      {
+        "answer": "否",
+        "score": "S"
+      }
+    ],
+    "id": 139,
+    "question": "听别人谈“家中被盗”一类的事，很难引起我的同情。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "E"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 140,
+    "question": "如果待遇相同，我宁愿当商品推销员，而不愿当图书管理员。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": ""
+      },
+      {
+        "answer": "否",
+        "score": "R"
+      }
+    ],
+    "id": 141,
+    "question": "我讨厌跟各类机械打交道。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": ""
+      },
+      {
+        "answer": "否",
+        "score": "R"
+      }
+    ],
+    "id": 142,
+    "question": "我小时候经常把玩具拆开，把里面看个究竟。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "A"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 143,
+    "question": "当接受新任务后，我喜欢以自己的独特方法去完成它。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "A"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 144,
+    "question": "我有文艺方面的天赋。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "C"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 145,
+    "question": "我喜欢把一切安排得整整齐齐、井井有条。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "S"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 146,
+    "question": "我喜欢作一名教师。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": ""
+      },
+      {
+        "answer": "否",
+        "score": "S"
+      }
+    ],
+    "id": 147,
+    "question": "和一群人在一起的时候，我总想不出恰当的话来说。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "A"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 148,
+    "question": "看情感影片时，我常禁不住眼圈红润。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": ""
+      },
+      {
+        "answer": "否",
+        "score": "I"
+      }
+    ],
+    "id": 149,
+    "question": "我讨厌学数学。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": ""
+      },
+      {
+        "answer": "否",
+        "score": "I"
+      }
+    ],
+    "id": 150,
+    "question": "在实验室里独自做实验会令我寂寞难耐。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "A"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 151,
+    "question": "对于急躁、爱发脾气的人，我仍能以礼相待。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": ""
+      },
+      {
+        "answer": "否",
+        "score": "I"
+      }
+    ],
+    "id": 152,
+    "question": "遇到难解答的问题时，我常常放弃。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "S"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 153,
+    "question": "大家公认我是一名勤劳踏实的、愿为大家服务的人。"
+  },
+  {
+    "answers": [
+      {
+        "answer": "是",
+        "score": "E"
+      },
+      {
+        "answer": "否",
+        "score": ""
+      }
+    ],
+    "id": 154,
+    "question": "我喜欢在人事部门工作。"
+  }
+]

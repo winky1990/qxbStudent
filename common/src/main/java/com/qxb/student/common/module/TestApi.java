@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 import retrofit2.Call;
+import retrofit2.http.Field;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.Headers;
@@ -21,17 +22,13 @@ import retrofit2.http.POST;
 public interface TestApi {
 
     /**
-     * 直播首页广告 2.3 新版本 新图片
+     * 测评-获取题库
      *
+     * @param type 2为霍兰德测试  默认为mbti测试
      * @return
      */
-    @Headers(Config.AUTH_COMMON)
-    @POST("chatRoom/liveHomeAd23")
-    Call<ApiModel<String>> getLiveHomeAd();
-
-
-    @Headers(Config.AUTH_COMMON)
+    @Headers(Config.AUTH_CUSTOM)
     @FormUrlEncoded
-    @POST("baseNews/connectSchool")
-    Call<ApiModel<String>> connectSchool(@FieldMap Map<String, String> conditionMap);
+    @POST("evaluation/getlist")
+    Call<ApiModel<String>> getEvaluationList(@Field("type") String type);
 }

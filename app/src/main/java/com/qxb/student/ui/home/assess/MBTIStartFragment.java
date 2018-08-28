@@ -1,18 +1,21 @@
 package com.qxb.student.ui.home.assess;
 
+import android.arch.lifecycle.MutableLiveData;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.qxb.student.R;
 import com.qxb.student.common.basics.AbsToolbarFragment;
+import com.qxb.student.common.utils.MobUtils;
 
 /**
  * mbti测评
+ *
  * @author winky
  * @date 2018/8/17
  */
-public class MBTIStartFragment extends AbsToolbarFragment{
+public class MBTIStartFragment extends AbsToolbarFragment {
 
     @Override
     public int bindContentView() {

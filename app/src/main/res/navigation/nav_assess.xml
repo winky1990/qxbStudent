@@ -14,4 +14,9 @@
     <fragment
         android:id="@+id/nav_assess_hollander_start"
         android:name="com.qxb.student.ui.home.assess.HollanderStartFragment" />
+
+    <fragment
+        android:id="@+id/nav_assess_problem"
+        android:name="com.qxb.student.ui.home.assess.AssessProblemFragment" />
+
 </navigation>

@@ -17,8 +17,9 @@ public class Application extends android.app.Application {
     public void onCreate() {
         super.onCreate();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            if (Looper.getMainLooper().isCurrentThread())
+            if (Looper.getMainLooper().isCurrentThread()) {
                 LibControl.getInstance().init(this);
+            }
         } else {
             if (Looper.getMainLooper().getThread().getId() == Thread.currentThread().getId()) {
                 LibControl.getInstance().init(this);

@@ -35,11 +35,11 @@ public class ExampleUnitTest {
                     .build();
 
             TestApi testApi = retrofit.create(TestApi.class);
-            Map<String, String> params = new HashMap<>();
-            params.put("type", "1");
-            params.put("newsId", "7312");
-            params.put("tag", "1");
-            ApiModel<String> apiModel = testApi.connectSchool(params).execute().body();
+//            Map<String, String> params = new HashMap<>();
+//            params.put("type", "1");
+//            params.put("newsId", "7312");
+//            params.put("tag", "1");
+            ApiModel<String> apiModel = testApi.getEvaluationList("").execute().body();
             if (apiModel != null) {
                 System.out.println(apiModel.toString());
             }

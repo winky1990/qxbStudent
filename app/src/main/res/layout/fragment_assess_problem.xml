@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.qxb.student.common.view.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_110"
+        android:background="@drawable/shape_bottom_divider"
+        app:contentInsetEnd="@dimen/px_0"
+        app:contentInsetStart="@dimen/px_0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ProgressBar
+                android:id="@+id/progressBar1"
+                style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="@dimen/px_0"
+                android:layout_height="@dimen/px_10"
+                android:layout_marginEnd="@dimen/px_30"
+                android:layout_marginStart="@dimen/px_30"
+                android:layout_weight="5"
+                android:progressDrawable="@drawable/shape_assess" />
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="@dimen/px_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="@dimen/px_45" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="@dimen/px_0"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/cancel"
+                android:textSize="@dimen/px_45" />
+        </LinearLayout>
+
+    </com.qxb.student.common.view.Toolbar>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/px_30">
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/px_5"
+                android:src="@mipmap/personality_question_icon" />
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/px_30"
+                android:layout_toEndOf="@+id/image1"
+                android:gravity="top|start"
+                android:lineSpacingExtra="@dimen/px_5"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/px_50" />
+
+
+            <com.qxb.student.common.view.abslist.ListView
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="@dimen/px_50"
+                android:layout_marginStart="@dimen/px_50"
+                android:dividerHeight="@dimen/px_0" />
+
+            <TextView
+                android:id="@+id/text6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/px_150"
+                android:layout_marginEnd="@dimen/px_50"
+                android:layout_marginStart="@dimen/px_50"
+                android:background="@drawable/btn_orange"
+                android:gravity="center"
+                android:text="@string/previous_problem"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/px_45"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

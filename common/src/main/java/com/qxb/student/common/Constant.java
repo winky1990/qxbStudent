@@ -52,7 +52,7 @@ public class Constant {
     public static final String NAV_SCHOOL_ID = "nav_school_id";
     public static final String NAV_SCHOOL_BAT = "nav_school_bat";
 
-
+    //----------------------------------------------------------------------------------------------
     /**
      * 根据id查询院校招生简章、资讯详情,返回网页
      */
@@ -74,4 +74,14 @@ public class Constant {
      * 融云token
      */
     public static final String CONFIG_ROOM_TOKEN = "config_room_token";
+
+    //----------------------------------------------------------------------------------------------
+    /**
+     * MBTI 题目
+     */
+    public static final String ASSETS_MBTI_ASSESS = "mbti_question.json";
+    /**
+     * 霍兰德题目
+     */
+    public static final String ASSETS_HOLLANDER_ASSESS = "hollander_question.json";
 }

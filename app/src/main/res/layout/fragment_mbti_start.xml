@@ -53,13 +53,13 @@
             android:gravity="center"
             android:text="@string/hint_mbti_start"
             android:textColor="@android:color/white"
+            android:layout_marginBottom="@dimen/px_40"
             android:textSize="@dimen/px_50" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/px_40"
             android:text="@string/hint_mbti_bottom"
             android:textColor="@color/colorDesc"
             android:textSize="@dimen/px_45" />

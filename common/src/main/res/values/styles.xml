@@ -94,7 +94,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:background">@drawable/xmakeup_rbtn_item_view</item>
+        <item name="android:background">@drawable/makeup_rbtn</item>
         <item name="android:button">@null</item>
         <item name="android:gravity">center</item>
         <item name="android:paddingBottom">@dimen/px_35</item>

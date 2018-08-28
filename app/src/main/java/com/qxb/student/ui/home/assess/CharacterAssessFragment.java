@@ -8,7 +8,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.qxb.student.R;
+import com.qxb.student.common.Constant;
 import com.qxb.student.common.basics.AbsExpandFragment;
+import com.qxb.student.common.utils.NavigationUtils;
 
 /**
  * 性格测评
@@ -38,11 +40,15 @@ public class CharacterAssessFragment extends AbsExpandFragment {
             switch (view.getId()) {
                 //MBTI
                 case R.id.image1:
-
+                    NavigationUtils.getInstance().jump(getFragment(),
+                            R.id.nav_assess_problem,
+                            AssessProblemFragment.create(Constant.ASSETS_MBTI_ASSESS));
                     break;
                 //霍兰德
                 case R.id.image2:
-
+                    NavigationUtils.getInstance().jump(getFragment(),
+                            R.id.nav_assess_problem,
+                            AssessProblemFragment.create(Constant.ASSETS_HOLLANDER_ASSESS));
                     break;
                 default:
                     break;

@@ -1,61 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:scrollbars="none">
 
-    <!--<LinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@mipmap/hld_22x"
         android:orientation="vertical">
 
 
         <ImageView
-            android:layout_width="140dp"
-            android:layout_height="130dp"
+            android:layout_width="@dimen/px_400"
+            android:layout_height="@dimen/px_400"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="26dp"
-            android:layout_marginTop="75dp"
-            android:src="@mipmap/hld3x"/>
+            android:layout_marginBottom="@dimen/px_50"
+            android:layout_marginTop="@dimen/px_150"
+            android:contentDescription="@string/hint_not_describe"
+            android:src="@mipmap/hld3x" />
 
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50.0dip"
             android:layout_marginRight="50.0dip"
             android:lineSpacingExtra="3.0dip"
-            android:text="兴趣是最好的老师，能把兴趣作为自己的工作，一定是件幸福的事情，挖掘自己的兴趣点所在，让你即将就读的专业和未来从事的职业，都能插上兴趣的翅膀。马上开始测试，获得专属于你的潜在职业兴趣报告！"
-            android:textColor="@color/white"
-            android:textSize="@dimen/text_size_13"/>
+            android:text="@string/hint_hollaender_center"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/px_45" />
 
-
-        <TextView
-            android:id="@id/start_personality_test"
-            android:layout_width="fill_parent"
-            android:layout_height="43dp"
-            android:layout_alignParentBottom="true"
-            android:layout_below="@id/ll_parent"
-            android:layout_marginLeft="68dp"
-            android:layout_marginRight="68dp"
-            android:layout_marginTop="85dp"
-            android:background="@drawable/personality_test_pre_selector1"
+        <Button
+            android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/px_40"
+            android:layout_marginLeft="@dimen/px_200"
+            android:layout_marginRight="@dimen/px_200"
+            android:layout_marginTop="@dimen/px_70"
+            android:background="@color/orange"
             android:gravity="center"
-            android:text="开始测试"
-            android:textColor="@color/black"
-            android:textSize="15sp"/>
+            android:text="@string/hint_mbti_start"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/px_50" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="15dp"
-            android:paddingLeft="4dp"
-            android:layout_marginBottom="60dp"
-            android:text="该测试共计60道题目,预计将花费您12分钟。"
-            android:textColor="@color/white"
-            android:textSize="13sp"
-            />
-    </LinearLayout>-->
+            android:layout_marginTop="@dimen/px_30"
+            android:text="@string/hint_hollaender_bottom"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/px_45" />
+    </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>
