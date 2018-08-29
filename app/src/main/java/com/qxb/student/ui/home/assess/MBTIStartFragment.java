@@ -30,8 +30,8 @@ public class MBTIStartFragment extends AbsToolbarFragment {
             @Override
             public void onClick(View view) {
                 NavigationUtils.getInstance().jump(getFragment(),
-                        R.id.nav_assess_problem,
-                        AssessProblemFragment.create(Constant.ASSETS_MBTI_ASSESS));
+                        R.id.nav_assess_mbti_result,
+                        MbtiResultFragment.create(Constant.ASSETS_MBTI_ASSESS));
             }
         });
     }

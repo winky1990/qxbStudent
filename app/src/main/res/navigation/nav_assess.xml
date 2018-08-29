@@ -19,4 +19,8 @@
         android:id="@+id/nav_assess_problem"
         android:name="com.qxb.student.ui.home.assess.AssessProblemFragment" />
 
+    <fragment
+        android:id="@+id/nav_assess_mbti_result"
+        android:name="com.qxb.student.ui.home.assess.MbtiResultFragment" />
+
 </navigation>

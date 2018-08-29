@@ -131,6 +131,16 @@ public class SimpleDialog {
         return this;
     }
 
+    public SimpleDialog message(String message) {
+        params.setContent(DialogContent.message().setText(message));
+        return this;
+    }
+
+    public SimpleDialog loading() {
+        params.setContent(DialogContent.loading());
+        return this;
+    }
+
     public void show() {
         DialogViewModel viewModel = ViewModelProviders.of(activity).get(DialogViewModel.class);
         viewModel.setParams(params);
@@ -144,7 +154,9 @@ public class SimpleDialog {
 
     public void cancle() {
         CustomDialogFragment fragment = get();
-        fragment.getDialog().cancel();
+        if (fragment.getDialog() != null) {
+            fragment.getDialog().cancel();
+        }
     }
 
     private CustomDialogFragment get() {

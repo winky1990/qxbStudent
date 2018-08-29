@@ -10,7 +10,7 @@
     <string name="qsrzqdyhm">请输入正确的用户名!</string>
     <string name="usinghelp">使用帮助</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder single -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="head_portrait">头像</string>
     <string name="sex">性别</string>
@@ -23,6 +23,6 @@
     <string name="ssgzhong">所属高中</string>
     <string name="weitian">未填</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder single -->
 
 </resources>

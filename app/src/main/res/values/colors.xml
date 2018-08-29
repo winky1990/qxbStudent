@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="assess_result_e">#00bd9f</color>
+    <color name="assess_result_s">#d19d4f</color>
+    <color name="assess_result_t">#8DDA0B</color>
+    <color name="assess_result_p">#ec2085</color>
+    <color name="assess_result_i">#50BFEB</color>
+    <color name="assess_result_n">#F0B300</color>
+    <color name="assess_result_f">#F65946</color>
+    <color name="assess_result_j">#01A89E</color>
+</resources>

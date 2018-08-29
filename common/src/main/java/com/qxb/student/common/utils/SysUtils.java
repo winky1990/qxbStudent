@@ -15,6 +15,9 @@ import android.net.Network;
 import android.net.NetworkInfo;
 import android.net.NetworkRequest;
 import android.os.Build;
+import android.support.annotation.ColorInt;
+import android.support.annotation.ColorRes;
+import android.support.v4.content.ContextCompat;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
@@ -76,13 +79,15 @@ public class SysUtils {
                     @Override
                     public void onAvailable(Network network) {
                         super.onAvailable(network);
-                        isNetwork = true;//网络可用
+                        //网络可用
+                        isNetwork = true;
                     }
 
                     @Override
                     public void onLost(Network network) {
                         super.onLost(network);
-                        isNetwork = false;//网络不可用
+                        //网络不可用
+                        isNetwork = false;
                     }
                 });
             } else {
@@ -231,6 +236,11 @@ public class SysUtils {
             e.printStackTrace();
             return null;
         }
+    }
+
+    @ColorInt
+    public int convertColor(@ColorRes int color) {
+        return ContextCompat.getColor(ContextUtils.getInstance().getContext(), color);
     }
 
     /**

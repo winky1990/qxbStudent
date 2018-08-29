@@ -15,6 +15,7 @@ import com.qxb.student.common.module.api.UserApi;
 import com.qxb.student.common.module.bean.ApiModel;
 import com.qxb.student.common.module.bean.UserSchoolTeacher;
 import com.qxb.student.common.module.bean.tab.Configure;
+import com.qxb.student.common.utils.Singleton;
 import com.qxb.student.common.utils.UserCache;
 
 import java.util.List;
@@ -25,6 +26,17 @@ import java.util.List;
  */
 public class OtherRepository extends BaseRepository {
 
+
+    private static final Singleton<OtherRepository> SINGLETON=new Singleton<OtherRepository>() {
+        @Override
+        protected OtherRepository create() {
+            return new OtherRepository();
+        }
+    };
+
+    public static OtherRepository getInstance() {
+        return SINGLETON.get();
+    }
 
     public void rongConnect(MutableLiveData<String> liveData, String userId, final boolean overdue) {
         new HttpTask<String>()
