@@ -1,7 +1,23 @@
 package com.qxb.student.common.utils;
 
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
+import android.support.annotation.ColorInt;
+import android.support.annotation.ColorRes;
+import android.support.annotation.DrawableRes;
+import android.support.annotation.IdRes;
+import android.support.annotation.NonNull;
+import android.support.annotation.StringRes;
+import android.support.v7.widget.AppCompatImageButton;
+import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.qxb.student.common.R;
 
@@ -11,36 +27,46 @@ import com.qxb.student.common.R;
  */
 public class MenuUtils {
 
-    public static MenuUtils with(Menu menu, MenuInflater inflater) {
-        return new MenuUtils(menu, inflater);
+    public static MenuUtils with(Menu menu) {
+        return new MenuUtils(menu);
     }
 
-    private Menu menu;
-    private MenuInflater inflater;
+    private final Menu menu;
+    private final Context context;
 
-    MenuUtils(Menu menu, MenuInflater inflater) {
+    MenuUtils(Menu menu) {
         this.menu = menu;
-        this.inflater = inflater;
+        this.context = ContextUtils.getInstance().getContext();
     }
 
-    public MenuUtils single() {
-        inflater.inflate(R.menu.single, menu);
+    public MenuUtils addText(@IdRes int id, @StringRes int strRes, @NonNull View.OnClickListener clickListener) {
+        return this.addText(id, context.getString(strRes), clickListener);
+    }
+
+    public MenuUtils addText(@IdRes int id, CharSequence title, @NonNull View.OnClickListener clickListener) {
+        return this.addText(id, title, R.color.colorAccent, clickListener);
+    }
+
+    public MenuUtils addText(@IdRes int id, CharSequence title, @ColorRes int color, @NonNull View.OnClickListener clickListener) {
+        MenuItem item = menu.add(0, id, 0, "");
+        TextView textView = View.inflate(context, R.layout.menu_text, null).findViewById(R.id.text1);
+        textView.setId(id);
+        textView.setText(title);
+        textView.setTextColor(SysUtils.getInstance().convertColor(color));
+        textView.setOnClickListener(clickListener);
+        item.setActionView(textView);
+        item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
         return this;
     }
 
-    public MenuUtils pair() {
-        inflater.inflate(R.menu.pair, menu);
+    public MenuUtils addIcon(@IdRes int id, @DrawableRes int drawableRes, @NonNull View.OnClickListener clickListener) {
+        MenuItem item = menu.add(0, id, 0, "");
+        ImageButton button = View.inflate(context, R.layout.menu_image, null).findViewById(R.id.image1);
+        button.setId(id);
+        button.setImageResource(drawableRes);
+        button.setOnClickListener(clickListener);
+        item.setActionView(button);
+        item.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
         return this;
-    }
-
-    public void setSingle(CharSequence sequence) {
-        single();
-        menu.findItem(R.id.item1).setTitle(sequence);
-    }
-
-    public void setPair(CharSequence sequence1, CharSequence sequence2) {
-        pair();
-        menu.findItem(R.id.item1).setTitle(sequence1);
-        menu.findItem(R.id.item2).setTitle(sequence2);
     }
 }

@@ -3,12 +3,15 @@ package com.qxb.student.common.dialog;
 import android.arch.lifecycle.ViewModelProviders;
 import android.support.annotation.ColorInt;
 import android.support.annotation.FloatRange;
+import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.view.Gravity;
 import android.view.View;
 
 import com.qxb.student.common.Config;
+import com.qxb.student.common.R;
 import com.qxb.student.common.dialog.model.DialogContent;
 import com.qxb.student.common.dialog.model.DialogFooter;
 import com.qxb.student.common.dialog.model.DialogHeader;
@@ -96,6 +99,10 @@ public class SimpleDialog {
         return this;
     }
 
+    public SimpleDialog positive(View.OnClickListener clickListener) {
+        return this.positive(activity.getString(R.string.ok), 0, 0, clickListener);
+    }
+
     public SimpleDialog positive(String text, View.OnClickListener clickListener) {
         return this.positive(text, 0, 0, clickListener);
     }
@@ -107,6 +114,10 @@ public class SimpleDialog {
     public SimpleDialog positive(String text, int textColor, int textSize, View.OnClickListener clickListener) {
         params.setPositive(new DialogFooter(text, textSize, textColor, clickListener));
         return this;
+    }
+
+    public SimpleDialog negative() {
+        return this.negative(activity.getString(R.string.cancel), 0, 0, null);
     }
 
     public SimpleDialog negative(String text) {
@@ -128,6 +139,11 @@ public class SimpleDialog {
 
     public SimpleDialog content(DialogContent dialogContent) {
         params.setContent(dialogContent);
+        return this;
+    }
+
+    public SimpleDialog message(@StringRes int stringRes) {
+        params.setContent(DialogContent.message().setText(activity.getString(stringRes)).setGravity(Gravity.CENTER));
         return this;
     }
 

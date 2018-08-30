@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.TextView;
@@ -15,10 +14,14 @@ import android.widget.TextView;
 import com.qxb.student.R;
 import com.qxb.student.common.basics.AbsToolbarFragment;
 import com.qxb.student.common.dialog.SimpleDialog;
+import com.qxb.student.common.dialog.model.DialogContent;
+import com.qxb.student.common.listener.MultiClickUtil;
 import com.qxb.student.common.module.AssessRepository;
 import com.qxb.student.common.module.bean.BaseEvaluationResult;
 import com.qxb.student.common.module.bean.abs.TwoPar;
+import com.qxb.student.common.module.bean.attr.NavAttr;
 import com.qxb.student.common.utils.MenuUtils;
+import com.qxb.student.common.utils.NavigationUtils;
 import com.qxb.student.common.utils.SpanUtils;
 import com.qxb.student.common.utils.ToastUtils;
 import com.qxb.student.common.view.abslist.adapter.AbsAdapter;
@@ -107,23 +110,43 @@ public class MbtiResultFragment extends AbsToolbarFragment {
         spanUtils.setSize(100, 2, 6);
         text1.setText(spanUtils.result());
         adapter.notifyDataSetChanged();
-        text2.setText(SpanUtils.from(R.string.hint_mbti_right_title).setColor(R.color.colorAccent).result());
+        text2.setText(evaluationResult.getDescription());
+
     }
 
+    private View.OnClickListener clickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            if (!MultiClickUtil.isFastClick()) {
+                return;
+            }
+            switch (view.getId()) {
+                case R.id.item1:
+                    SimpleDialog.with(getActivity())
+                            .message(R.string.hint_mbti_again)
+                            .negative()
+                            .positive(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    NavigationUtils.getInstance().toNavigation(getContext(),
+                                            new NavAttr.Builder()
+                                                    .graphRes(R.navigation.nav_assess)
+                                                    .navId(R.id.nav_assess_mbti_start)
+                                                    .build());
+                                    getActivity().finish();
+                                }
+                            })
+                            .show();
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        MenuUtils.with(menu).addText(R.id.item1, R.string.hint_mbti_right_title, clickListener);
         super.onCreateOptionsMenu(menu, inflater);
-        MenuUtils.with(menu, inflater).setSingle(SpanUtils.from(R.string.hint_mbti_right_title).setColor(R.color.colorAccent).result());
     }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        super.onOptionsItemSelected(item);
-        if (item.getItemId() == R.id.item1) {
-            ToastUtils.toast(R.string.hint_mbti_right_title);
-        }
-        return true;
-    }
-
 }

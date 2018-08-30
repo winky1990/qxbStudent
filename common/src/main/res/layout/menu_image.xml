@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageButton xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/image1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:contentDescription="@string/hint_not_describe"
+    android:focusable="true"
+    android:paddingBottom="@dimen/px_8"
+    android:paddingEnd="@dimen/px_15"
+    android:paddingStart="@dimen/px_15"
+    android:paddingTop="@dimen/px_8" />

@@ -164,7 +164,9 @@ public class CustomDialogFragment extends DialogFragment {
                 @Override
                 public void onClick(View view) {
                     dismiss();
-                    dialogFooter.getClickListener().onClick(view);
+                    if (dialogFooter.getClickListener() != null) {
+                        dialogFooter.getClickListener().onClick(view);
+                    }
                 }
             });
         } else {

@@ -1,9 +1,7 @@
 package com.qxb.student.common.view;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.ColorInt;
 import android.support.annotation.DrawableRes;
@@ -16,18 +14,13 @@ import android.support.v7.widget.AppCompatImageButton;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.Gravity;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.qxb.student.common.R;
-import com.qxb.student.common.utils.NavigationUtils;
 import com.qxb.student.common.utils.SysUtils;
-
-import java.util.ArrayList;
-import java.util.Objects;
 
 /**
  * 处理toolbar固定大小后文字居中微调

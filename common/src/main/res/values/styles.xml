@@ -15,6 +15,7 @@
         <item name="android:configChanges">orientation|keyboardHidden|navigation|screenSize</item>
         <item name="android:windowSoftInputMode">stateHidden|adjustResize</item>
 
+        <item name="android:windowBackground">@color/colorTheme</item>
         <item name="android:fitsSystemWindows">false</item>
         <item name="android:clipToPadding">false</item>
         <!--标题栏-->
