@@ -23,4 +23,8 @@
         android:id="@+id/nav_assess_mbti_result"
         android:name="com.qxb.student.ui.home.assess.MbtiResultFragment" />
 
+    <fragment
+        android:id="@+id/nav_assess_hollander_result"
+        android:name="com.qxb.student.ui.home.assess.HollanderResultFragment" />
+
 </navigation>

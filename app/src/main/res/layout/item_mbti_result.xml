@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:background="@drawable/assess_result_e"
+        android:background="@drawable/assess_mbti_e"
         android:textColor="@color/white"
         android:textSize="@dimen/px_60" />
 

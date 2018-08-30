@@ -21,6 +21,8 @@
     <color name="azure">#c8eaf3</color>
     <color name="deep_blue">#005cb3</color>
 
+    <color name="color_gray_deep">#60000000</color>
+
     <color name="white">#ffffffff</color>
     <color name="black">#ff000000</color>
 </resources>

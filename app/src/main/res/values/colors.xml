@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="assess_result_e">#00bd9f</color>
-    <color name="assess_result_s">#d19d4f</color>
-    <color name="assess_result_t">#8DDA0B</color>
-    <color name="assess_result_p">#ec2085</color>
-    <color name="assess_result_i">#50BFEB</color>
-    <color name="assess_result_n">#F0B300</color>
-    <color name="assess_result_f">#F65946</color>
-    <color name="assess_result_j">#01A89E</color>
+    <color name="assess_mbti_e">#00bd9f</color>
+    <color name="assess_mbti_s">#d19d4f</color>
+    <color name="assess_mbti_t">#8DDA0B</color>
+    <color name="assess_mbti_p">#ec2085</color>
+    <color name="assess_mbti_i">#50BFEB</color>
+    <color name="assess_mbti_n">#F0B300</color>
+    <color name="assess_mbti_f">#F65946</color>
+    <color name="assess_mbti_j">#01A89E</color>
+
+    <color name="assess_hollander_r">#e4f2fb</color>
+    <color name="assess_hollander_i">#fef9eb</color>
+    <color name="assess_hollander_c">#feefe8</color>
+    <color name="assess_hollander_a">#e8f9f3</color>
+    <color name="assess_hollander_e">#f2f2f2</color>
+    <color name="assess_hollander_s">#f3f3ff</color>
 </resources>

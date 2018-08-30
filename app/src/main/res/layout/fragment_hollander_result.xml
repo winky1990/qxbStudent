@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/px_30"
+        android:paddingTop="@dimen/px_30">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/px_20"
+            android:text="@string/hint_hollander_top"
+            android:textColor="@color/color_gray_deep"
+            android:textSize="@dimen/px_55"
+            android:textStyle="bold" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/px_550"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/px_10"
+            android:layout_marginTop="@dimen/px_25"
+            android:gravity="center">
+
+            <com.qxb.student.common.view.custom.RadarChartView
+                android:id="@+id/radarChartView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                app:axisNumb="2"
+                app:dotVisiable="false"
+                app:textSzie="@dimen/px_45" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginBottom="@dimen/px_15"
+                android:layout_marginEnd="@dimen/px_15"
+                android:text="0"
+                android:textColor="@color/color_gray_deep"
+                android:textSize="@dimen/px_45" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginEnd="@dimen/px_15"
+                android:layout_marginTop="@dimen/px_160"
+                android:text="5"
+                android:textColor="@color/color_gray_deep"
+                android:textSize="@dimen/px_45" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/px_35"
+            android:layout_marginTop="@dimen/px_60"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/px_60" />
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/px_60"
+            android:layout_marginStart="@dimen/px_60"
+            android:layout_marginTop="@dimen/px_30"
+            android:lineSpacingExtra="@dimen/px_8"
+            android:textColor="@color/black"
+            android:textSize="@dimen/px_45" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px_20"
+            android:background="@color/colorDivider" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/px_50"
+            android:layout_marginTop="@dimen/px_50"
+            android:text="@string/hint_hollander_bottom"
+            android:textColor="@color/color_gray_deep"
+            android:textSize="@dimen/px_55"
+            android:textStyle="bold" />
+
+        <com.qxb.student.common.view.abslist.ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/px_60"
+            android:layout_marginStart="@dimen/px_60" />
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

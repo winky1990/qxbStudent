@@ -10,14 +10,14 @@ public enum MbtiType {
     /**
      * E
      */
-    E("E", R.drawable.assess_result_e, R.color.assess_result_e),
-    F("F", R.drawable.assess_result_f, R.color.assess_result_f),
-    I("I", R.drawable.assess_result_i, R.color.assess_result_i),
-    J("J", R.drawable.assess_result_j, R.color.assess_result_j),
-    N("N", R.drawable.assess_result_n, R.color.assess_result_n),
-    P("P", R.drawable.assess_result_p, R.color.assess_result_p),
-    S("S", R.drawable.assess_result_s, R.color.assess_result_s),
-    T("T", R.drawable.assess_result_t, R.color.assess_result_t);
+    E("E", R.drawable.assess_mbti_e, R.color.assess_mbti_e),
+    F("F", R.drawable.assess_mbti_f, R.color.assess_mbti_f),
+    I("I", R.drawable.assess_mbti_i, R.color.assess_mbti_i),
+    J("J", R.drawable.assess_mbti_j, R.color.assess_mbti_j),
+    N("N", R.drawable.assess_mbti_n, R.color.assess_mbti_n),
+    P("P", R.drawable.assess_mbti_p, R.color.assess_mbti_p),
+    S("S", R.drawable.assess_mbti_s, R.color.assess_mbti_s),
+    T("T", R.drawable.assess_mbti_t, R.color.assess_mbti_t);
 
     private String type;
     private int drawableRes;

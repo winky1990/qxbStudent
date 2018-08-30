@@ -63,4 +63,20 @@
     <declare-styleable name="ToolbarPadding">
         <attr name="paddingTop" format="boolean" />
     </declare-styleable>
+
+    <declare-styleable name="RadarChartView">
+        <attr name="bgColor" format="color" />
+        <attr name="dotColor" format="color" />
+        <attr name="dotVisiable" format="boolean" />
+        <attr name="dataAreaColor" format="color" />
+        <attr name="griddingColor" format="color" />
+        <attr name="valueStrokeColor" format="color" />
+        <attr name="griddingVisiable" format="boolean" />
+        <attr name="dotRadius" format="dimension" />
+        <attr name="textSzie" format="dimension" />
+        <attr name="textSpacing" format="dimension" />
+        <attr name="axisNumb" format="integer" />
+        <attr name="axisMax" format="float" />
+        <attr name="textColor" format="color" />
+    </declare-styleable>
 </resources>
