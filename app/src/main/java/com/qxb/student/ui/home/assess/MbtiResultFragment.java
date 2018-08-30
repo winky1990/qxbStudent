@@ -14,7 +14,6 @@ import android.widget.TextView;
 import com.qxb.student.R;
 import com.qxb.student.common.basics.AbsToolbarFragment;
 import com.qxb.student.common.dialog.SimpleDialog;
-import com.qxb.student.common.dialog.model.DialogContent;
 import com.qxb.student.common.listener.MultiClickUtil;
 import com.qxb.student.common.module.AssessRepository;
 import com.qxb.student.common.module.bean.BaseEvaluationResult;
@@ -23,7 +22,6 @@ import com.qxb.student.common.module.bean.attr.NavAttr;
 import com.qxb.student.common.utils.MenuUtils;
 import com.qxb.student.common.utils.NavigationUtils;
 import com.qxb.student.common.utils.SpanUtils;
-import com.qxb.student.common.utils.ToastUtils;
 import com.qxb.student.common.view.abslist.adapter.AbsAdapter;
 import com.qxb.student.type.MbtiType;
 
