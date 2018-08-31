@@ -24,5 +24,9 @@ public enum DialogMode {
     /**
      * 加载条
      */
-    LOADING
+    LOADING,
+    /**
+     * 自定义
+     */
+    CUSTOM
 }

@@ -199,7 +199,7 @@
     <string name="hint_chat_hello">你好！有什么可以帮助你的吗？</string>
 
     <string name="hint_frequent_operation">请谨慎操作，点击频率不能太快</string>
-    <string name="hint_loading">数据加载中...</string>
+    <string name="hint_loading">数据加载中…</string>
 
     <string name="hint_character_assess">职业性格测评</string>
     <string name="hint_character_assess_desc">职业规划前通常专家都建议进行包括职业性格、职业兴趣、潜能、天赋等测试，通过这些测试，每个人都能通过自己的职业测评结果来了解适合自己的职业规划方向\n\n想知道自己的优势和潜在弱点是什么吗？\n现在就开始来测试吧！</string>
@@ -210,9 +210,9 @@
     <string name="hint_mbti_start">开始测试</string>
     <string name="hint_hollaender_bottom">该测试共计60道题目,预计将花费您12分钟。</string>
     <string name="hint_hollaender_center">兴趣是最好的老师，能把兴趣作为自己的工作，一定是件幸福的事情，挖掘自己的兴趣点所在，让你即将就读的专业和未来从事的职业，都能插上兴趣的翅膀。马上开始测试，获得专属于你的潜在职业兴趣报告！</string>
-    <string name="hint_mbti_theme">我是%1$s型人</string>
+    <string name="hint_assess_theme">您属于%1$s型的人</string>
     <string name="hint_mbti_right_title">重新测试</string>
-    <string name="hint_mbti_again">重新测试,将会清空现有的测试结果</string>
+    <string name="hint_assess_again">重新测试,将会清空现有的测试结果</string>
     <string name="hint_hollander_top">霍兰德兴趣测评结果分析</string>
     <string name="hint_hollander_bottom">霍兰德兴趣测评详解</string>
     <string name="menu_default">默认</string>
@@ -228,5 +228,9 @@
     <string name="hint_hollander_type_s">社会型（S）</string>
     <string name="hint_hollander_type_e">企业型（E）</string>
     <string name="hint_hollander_type_c">常规型（C）</string>
+    <string name="hint_hollander_integral">霍兰德测试完成！您已获得%1$d积分</string>
+
+    <string name="hint_dialog_integral">(10积分=1元)</string>
+
 
 </resources>

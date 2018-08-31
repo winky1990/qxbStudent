@@ -74,6 +74,14 @@ public class Constant {
      * 融云token
      */
     public static final String CONFIG_ROOM_TOKEN = "config_room_token";
+    /**
+     * MBTI测试结果
+     */
+    public static final String CONFIG_MBTI_RESULT = "config_mbti_result";
+    /**
+     * 霍兰德测试结果
+     */
+    public static final String CONFIG_HOLLANDER_RESULT = "config_hollander_result";
 
     //----------------------------------------------------------------------------------------------
     /**

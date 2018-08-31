@@ -29,6 +29,7 @@ public class DialogViewModel extends AndroidViewModel {
     }
 
     public void setParams(DialogParams params) {
+        this.params = null;
         this.params = params;
     }
 }

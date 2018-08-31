@@ -1,7 +1,9 @@
 package com.qxb.student.type;
 
 public enum OrderType {
-
+    /**
+     * 支付状态
+     */
     TO_PAY(1, "待支付"),
     PERFECT_INFO(2, "完善资料"),
     TO_HANDLE(3, "待处理"),

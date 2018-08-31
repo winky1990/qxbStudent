@@ -16,7 +16,7 @@ import com.qxb.student.common.basics.AbsToolbarFragment;
 import com.qxb.student.common.dialog.SimpleDialog;
 import com.qxb.student.common.listener.MultiClickUtil;
 import com.qxb.student.common.module.AssessRepository;
-import com.qxb.student.common.module.bean.BaseEvaluationResult;
+import com.qxb.student.common.module.bean.MbtiResult;
 import com.qxb.student.common.module.bean.abs.TwoPar;
 import com.qxb.student.common.module.bean.attr.NavAttr;
 import com.qxb.student.common.utils.MenuUtils;
@@ -51,6 +51,7 @@ public class MbtiResultFragment extends AbsToolbarFragment {
 
     @Override
     public void initContent(View contentView, @Nullable Bundle savedInstanceState) {
+        // TODO: 2018/8/31 根据档案中 has_mbti 判断是否已经测试过
         String result = getArguments() != null ? getArguments().getString(TAG) : null;
         if (TextUtils.isEmpty(result)) {
             onBackPressed();
@@ -78,10 +79,10 @@ public class MbtiResultFragment extends AbsToolbarFragment {
 
     private void submitAssess(String result) {
         SimpleDialog.with(getActivity()).loading().show();
-        MutableLiveData<BaseEvaluationResult> liveData = new MutableLiveData<>();
-        liveData.observe(this, new Observer<BaseEvaluationResult>() {
+        MutableLiveData<MbtiResult> liveData = new MutableLiveData<>();
+        liveData.observe(this, new Observer<MbtiResult>() {
             @Override
-            public void onChanged(@Nullable BaseEvaluationResult evaluationResult) {
+            public void onChanged(@Nullable MbtiResult evaluationResult) {
                 SimpleDialog.with(getActivity()).loading().cancle();
                 refreshUI(evaluationResult);
             }
@@ -89,24 +90,24 @@ public class MbtiResultFragment extends AbsToolbarFragment {
         new AssessRepository().getResultNew(liveData, result);
     }
 
-    private void refreshUI(BaseEvaluationResult evaluationResult) {
+    private void refreshUI(MbtiResult evaluationResult) {
         if (evaluationResult == null) {
             return;
         }
         String result = evaluationResult.getResult();
         String[] tags = evaluationResult.getName().split(" ");
-        SpanUtils spanUtils = SpanUtils.from(String.format(getString(R.string.hint_mbti_theme), result));
+        SpanUtils spanUtils = SpanUtils.from(String.format(getString(R.string.hint_assess_theme), result));
         char[] types = result.toCharArray();
         for (int i = 0; i < types.length; i++) {
             String type = Character.toString(types[i]);
             MbtiType mbtiType = MbtiType.findByType(type);
             if (mbtiType != null) {
-                spanUtils.setColor(mbtiType.getColorRes(), 2 + i, 3 + i);
+                spanUtils.setColor(mbtiType.getColorRes(), 3 + i, 4 + i);
             }
             adapter.add(new TwoPar<>(type, tags[i]));
         }
-        spanUtils.setSize(100, 2, 6);
-        text1.setText(spanUtils.result());
+        spanUtils.setSize(100, 3, 3 + types.length);
+        text1.setText(spanUtils.build());
         adapter.notifyDataSetChanged();
         text2.setText(evaluationResult.getDescription());
 
@@ -121,7 +122,7 @@ public class MbtiResultFragment extends AbsToolbarFragment {
             switch (view.getId()) {
                 case R.id.item1:
                     SimpleDialog.with(getActivity())
-                            .message(R.string.hint_mbti_again)
+                            .message(R.string.hint_assess_again)
                             .negative()
                             .positive(new View.OnClickListener() {
                                 @Override
@@ -141,6 +142,13 @@ public class MbtiResultFragment extends AbsToolbarFragment {
             }
         }
     };
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        text1 = null;
+        text2 = null;
+    }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {

@@ -165,8 +165,8 @@ public abstract class BaseFragment extends Fragment implements IBinding {
     }
 
     public void onBackPressed() {
-        if (!NavigationUtils.getInstance().goBack(getFragment())) {
+//        if (!NavigationUtils.getInstance().goBack(getFragment())) {
             ActivityCompat.finishAfterTransition(getActivity());
-        }
+//        }
     }
 }

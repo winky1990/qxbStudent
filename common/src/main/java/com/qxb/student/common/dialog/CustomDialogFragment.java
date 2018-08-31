@@ -10,8 +10,6 @@ import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.view.View;
@@ -54,6 +52,9 @@ public class CustomDialogFragment extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        if (viewModel.getParams() == null) {
+            return super.onCreateDialog(savedInstanceState);
+        }
         builder.setView(inflateView());
         return builder.create();
     }
@@ -77,7 +78,6 @@ public class CustomDialogFragment extends DialogFragment {
                         getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
                     }
                 }
-                viewModel.setParams(null);
             }
         });
     }
@@ -111,17 +111,6 @@ public class CustomDialogFragment extends DialogFragment {
                     params.getWidth() == 0 ? ViewGroup.LayoutParams.WRAP_CONTENT : params.getWidth(),
                     params.getHeight() == 0 ? ViewGroup.LayoutParams.WRAP_CONTENT : params.getHeight());
         }
-    }
-
-    @Override
-    public void show(FragmentManager manager, String tag) {
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-        if (isAdded()) {
-            transaction.remove(this);
-        }
-        transaction.add(this, tag);
-        transaction.commitAllowingStateLoss();
     }
 
     private View inflateView() {
@@ -215,6 +204,11 @@ public class CustomDialogFragment extends DialogFragment {
                 TextView textView = view.findViewById(R.id.text1);
                 setContentText(textView, content);
                 rootView.addView(view);
+            }
+            case CUSTOM: {
+                if (content.getView() != null) {
+                    rootView.addView(content.getView());
+                }
             }
             break;
             default:

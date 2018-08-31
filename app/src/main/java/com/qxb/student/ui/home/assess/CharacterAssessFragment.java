@@ -48,16 +48,20 @@ public class CharacterAssessFragment extends AbsExpandFragment {
     private View.OnClickListener clickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            // TODO: 2018/8/31 根据档案中 has_mbti 判断是否已经测试过
             switch (view.getId()) {
                 //MBTI
                 case R.id.image1:
                     NavigationUtils.getInstance().jump(getFragment(),
                             R.id.nav_assess_mbti_start);
+
+//                    NavigationUtils.getInstance().jump(getFragment(), R.id.nav_assess_mbti_result, MbtiResultFragment.create(buffer.toString()));
                     break;
                 //霍兰德
                 case R.id.image2:
                     NavigationUtils.getInstance().jump(getFragment(),
                             R.id.nav_assess_hollander_start);
+//                    NavigationUtils.getInstance().jump(getFragment(), R.id.nav_assess_hollander_result, HollanderResultFragment.create(buffer.toString()));
                     break;
                 case R.id.image3:
                     onBackPressed();

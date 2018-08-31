@@ -4,6 +4,7 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 
 import com.qxb.student.common.Config;
+import com.qxb.student.common.listener.TRunnable;
 import com.qxb.student.common.module.bean.User;
 import com.qxb.student.common.module.dao.RoomUtils;
 
@@ -31,7 +32,7 @@ public class UserCache {
 
     private volatile MutableLiveData<User> userLiveData = new MutableLiveData<>();
 
-    public void update(User user) {
+    public void updateCache(User user) {
         userLiveData.postValue(user);
     }
 
@@ -53,6 +54,17 @@ public class UserCache {
             }
         }
         return userLiveData;
+    }
+
+    public void save(User user) {
+        synchronized (Config.LOCK) {
+            ExecutorUtils.getInstance().addTask(new TRunnable<User>(user) {
+                @Override
+                public void run(User item) {
+                    RoomUtils.getInstance().userDao().insert(item);
+                }
+            });
+        }
     }
 
     public User getUser() {

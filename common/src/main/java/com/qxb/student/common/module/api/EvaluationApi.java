@@ -2,7 +2,8 @@ package com.qxb.student.common.module.api;
 
 import com.qxb.student.common.Config;
 import com.qxb.student.common.module.bean.ApiModel;
-import com.qxb.student.common.module.bean.BaseEvaluationResult;
+import com.qxb.student.common.module.bean.HollanderAssess;
+import com.qxb.student.common.module.bean.MbtiResult;
 
 import java.util.List;
 
@@ -39,7 +40,7 @@ public interface EvaluationApi {
     @Headers(Config.AUTH_CUSTOM)
     @FormUrlEncoded
     @POST("evaluation/getResultHolland")
-    Call<ApiModel<String>> getResultHolland(@Field("userid") String studentId, @Field("username") String username, @Field("result") String result);
+    Call<ApiModel<HollanderAssess>> getResultHolland(@Field("userid") String studentId, @Field("username") String username, @Field("result") String result);
 
     /**
      * 测评-获取答题结果
@@ -53,7 +54,7 @@ public interface EvaluationApi {
     @Headers(Config.AUTH_CUSTOM)
     @FormUrlEncoded
     @POST("evaluation/getResult")
-    Call<ApiModel<BaseEvaluationResult>> getResult(@Field("userid") String studentId, @Field("username") String username, @Field("result") String result, @Field("type") String type);
+    Call<ApiModel<MbtiResult>> getResult(@Field("userid") String studentId, @Field("username") String username, @Field("build") String result, @Field("type") String type);
 
     /**
      * 测评-获取答题结果新接口（去掉 type本专科 、去掉职业推荐）
@@ -66,7 +67,7 @@ public interface EvaluationApi {
     @Headers(Config.AUTH_CUSTOM)
     @FormUrlEncoded
     @POST("evaluation/getResultNew")
-    Call<ApiModel<BaseEvaluationResult>> getResultNew(@Field("userid") String studentId, @Field("username") String username, @Field("result") String result);
+    Call<ApiModel<MbtiResult>> getResultNew(@Field("userid") String studentId, @Field("username") String username, @Field("build") String result);
 
     /**
      * 测评-获取专业

@@ -10,10 +10,10 @@ import com.qxb.student.common.http.task.DataHandle;
 import com.qxb.student.common.http.task.HttpTask;
 import com.qxb.student.common.module.api.SmsApi;
 import com.qxb.student.common.module.api.UserApi;
+import com.qxb.student.common.module.api.UserStudentApi;
 import com.qxb.student.common.module.bean.ApiModel;
 import com.qxb.student.common.module.bean.User;
 import com.qxb.student.common.utils.LibControl;
-import com.qxb.student.common.utils.OtherHelper;
 import com.qxb.student.common.utils.UserCache;
 
 /**
@@ -38,7 +38,7 @@ public class UserRepository extends BaseRepository {
                     public void handle(@NonNull User data) {
                         data.setTelphone(account);
                         roomUtils.userDao().insert(data);
-                        UserCache.getInstance().update(data);
+                        UserCache.getInstance().updateCache(data);
                         LibControl.getInstance().loadOther(data);
                     }
                 }).start();
@@ -79,6 +79,19 @@ public class UserRepository extends BaseRepository {
                     }
                 }).start();
         return checkCodeLiveData;
+    }
+
+    public void updateIntegral() {
+        new HttpTask<String>()
+                .call(httpUtils.create(UserStudentApi.class).studentIntegral(UserCache.getInstance().getAccountId()))
+                .handle(new DataHandle<String>() {
+                    @Override
+                    public void handle(@NonNull String data) {
+                        User user = UserCache.getInstance().getUser();
+                        user.setIntegral(Integer.parseInt(data));
+                        UserCache.getInstance().save(user);
+                    }
+                }).start();
     }
 
     @Override

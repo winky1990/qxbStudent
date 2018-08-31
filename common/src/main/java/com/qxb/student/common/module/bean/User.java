@@ -67,6 +67,16 @@ public class User {
      */
     private String area_code;
 
+    private int integral;
+
+    public int getIntegral() {
+        return integral;
+    }
+
+    public void setIntegral(int integral) {
+        this.integral = integral;
+    }
+
     public String getArea() {
         return area;
     }

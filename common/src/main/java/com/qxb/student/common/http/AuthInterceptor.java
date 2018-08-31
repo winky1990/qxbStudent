@@ -107,13 +107,12 @@ public class AuthInterceptor implements Interceptor {
     }
 
     private String custom(@NonNull User user) {
-        StringBuilder buffer = new StringBuilder();
-        buffer.append(user.getTelphone());
-        buffer.append(":");
-        buffer.append(user.getPassword());
-        buffer.append(":student");
-//        return Encrypt.base64("18908683128:123456:student");
-        return Encrypt.base64(buffer.toString());
+        String buffer = user.getTelphone() +
+                ":" +
+                user.getPassword() +
+                ":student";
+        //        return Encrypt.base64("18908683128:123456:student");
+        return Encrypt.base64(buffer);
     }
 
     private String getAppSrc() {

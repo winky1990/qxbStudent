@@ -1,6 +1,5 @@
 package com.qxb.student.ui.home.assess;
 
-import android.arch.lifecycle.MutableLiveData;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -8,7 +7,6 @@ import android.view.View;
 import com.qxb.student.R;
 import com.qxb.student.common.Constant;
 import com.qxb.student.common.basics.AbsToolbarFragment;
-import com.qxb.student.common.utils.MobUtils;
 import com.qxb.student.common.utils.NavigationUtils;
 
 /**
@@ -30,8 +28,8 @@ public class MBTIStartFragment extends AbsToolbarFragment {
             @Override
             public void onClick(View view) {
                 NavigationUtils.getInstance().jump(getFragment(),
-                        R.id.nav_assess_mbti_result,
-                        MbtiResultFragment.create(Constant.ASSETS_MBTI_ASSESS));
+                        R.id.nav_assess_problem,
+                        AssessProblemFragment.create(Constant.ASSETS_MBTI_ASSESS));
             }
         });
     }

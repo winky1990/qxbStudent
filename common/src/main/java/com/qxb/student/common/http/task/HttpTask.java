@@ -10,9 +10,11 @@ import com.qxb.student.common.utils.ExecutorUtils;
 import com.qxb.student.common.utils.Logger;
 
 import java.io.IOException;
+import java.net.URLDecoder;
 import java.util.List;
 import java.util.Objects;
 
+import okhttp3.internal.Util;
 import okio.Buffer;
 import retrofit2.Call;
 import retrofit2.Response;
@@ -104,11 +106,11 @@ public class HttpTask<T> implements Runnable {
             //如果数据有本地存储则先检查本地数据
             if (clientTask != null && pageIndex == 1) {
                 T data = clientTask.reqInSQLite(pageIndex);
-                //判断泛型类型是集合还是单个对象，如果有数据则直接post给liveData
-                ApiModel<T> apiModel = new ApiModel<>();
-                apiModel.setCode(Config.HTTP_SUCCESS);
-                apiModel.setData(data);
                 if (data != null) {
+                    //判断泛型类型是集合还是单个对象，如果有数据则直接post给liveData
+                    ApiModel<T> apiModel = new ApiModel<>();
+                    apiModel.setCode(Config.HTTP_SUCCESS);
+                    apiModel.setData(data);
                     if (data instanceof List) {
                         if (((List) data).size() > 0) {
                             transmitData(apiModel);
@@ -148,8 +150,7 @@ public class HttpTask<T> implements Runnable {
                 logger.d("HttpRequest:" + call.request().url().toString());
                 Buffer buffer = new Buffer();
                 Objects.requireNonNull(call.request().body()).writeTo(buffer);
-                String params = buffer.readUtf8();
-                logger.d("params:" + params);
+                logger.d("params:" + URLDecoder.decode(buffer.readUtf8(), Util.UTF_8.name()));
                 if (apiModel != null) {
                     logger.d("HttpResponse:" + apiModel.toString());
                 }
@@ -165,7 +166,9 @@ public class HttpTask<T> implements Runnable {
             //将页码返回给调用者
             apiModelHandle.handle(apiModel, pageIndex);
         } else {
-            netLiveData.postValue(apiModel.getData());
+            if (netLiveData != null) {
+                netLiveData.postValue(apiModel.getData());
+            }
             if (handle != null) {
                 handle.handle(apiModel.getData());
             }

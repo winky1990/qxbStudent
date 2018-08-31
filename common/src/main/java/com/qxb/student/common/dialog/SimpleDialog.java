@@ -4,11 +4,12 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.support.annotation.ColorInt;
 import android.support.annotation.FloatRange;
 import android.support.annotation.StringRes;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.TextView;
 
 import com.qxb.student.common.Config;
 import com.qxb.student.common.R;
@@ -16,6 +17,7 @@ import com.qxb.student.common.dialog.model.DialogContent;
 import com.qxb.student.common.dialog.model.DialogFooter;
 import com.qxb.student.common.dialog.model.DialogHeader;
 import com.qxb.student.common.dialog.model.DialogParams;
+import com.qxb.student.common.utils.SpanUtils;
 import com.qxb.student.common.utils.SysUtils;
 
 import java.util.concurrent.atomic.AtomicReference;
@@ -99,6 +101,10 @@ public class SimpleDialog {
         return this;
     }
 
+    public SimpleDialog positive() {
+        return this.positive(activity.getString(R.string.ok), 0, 0, null);
+    }
+
     public SimpleDialog positive(View.OnClickListener clickListener) {
         return this.positive(activity.getString(R.string.ok), 0, 0, clickListener);
     }
@@ -157,13 +163,27 @@ public class SimpleDialog {
         return this;
     }
 
+    public SimpleDialog integral(int integral) {
+        View view = View.inflate(activity, R.layout.dialog_content_integral, null);
+        TextView textView = view.findViewById(R.id.text1);
+        String result = String.format(activity.getString(R.string.hint_hollander_integral), integral);
+        int end = result.length() - 2;
+        textView.setText(SpanUtils.from(result).setColor(R.color.orange, end - String.valueOf(integral).length(), end).build());
+        params.setContent(DialogContent.custom().setView(view));
+        return this;
+    }
+
     public void show() {
-        DialogViewModel viewModel = ViewModelProviders.of(activity).get(DialogViewModel.class);
-        viewModel.setParams(params);
         FragmentManager fragmentManager = activity.getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        ViewModelProviders.of(activity).get(DialogViewModel.class).setParams(params);
         CustomDialogFragment fragment = (CustomDialogFragment) fragmentManager.findFragmentByTag(TAG);
         if (fragment == null) {
             fragment = get();
+        }
+        if (fragment.isAdded()) {
+            transaction.remove(fragment).commit();
         }
         fragment.show(fragmentManager, TAG);
     }

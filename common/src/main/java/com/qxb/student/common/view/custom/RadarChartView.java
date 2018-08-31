@@ -10,14 +10,13 @@ import android.view.View;
 
 import com.qxb.student.common.R;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.List;
 
 import static android.graphics.Color.parseColor;
 
 public class RadarChartView extends View {
+
     private Context context;
     private Paint axisPaint;
     private Paint valuePaint;
@@ -97,7 +96,7 @@ public class RadarChartView extends View {
     private HashMap<String, Float> valueHash;
     private String[] text = new String[]{"a", "b", "c", "d", "e", "f"};
     private int[] value = new int[]{5, 5, 5, 5, 5, 5};
-    private List<Integer> value1 = new ArrayList<>();
+
 
     public RadarChartView(Context context) {
         this(context, null);
@@ -113,12 +112,6 @@ public class RadarChartView extends View {
         valueHash = new LinkedHashMap<>();
         iniParams(attrs, defStyleAttr);
         initPaint();
-    }
-
-    private void getData() {
-        for (int aValue : value) {
-            value1.add(aValue);
-        }
     }
 
     /**
@@ -303,10 +296,10 @@ public class RadarChartView extends View {
         Path dataPath = new Path();
         //半径大小
         float r = radius / axisMax;
-        if (value1.size() != 0) {
+        if (value.length != 0) {
             for (int i = 0; i < countX; i++) {
-                float x = (float) Math.cos(-Math.PI / 2 + angle * i) * r * value1.get(i);
-                float y = (float) Math.sin(-Math.PI / 2 + angle * i) * r * value1.get(i);
+                float x = (float) Math.cos(-Math.PI / 2 + angle * i) * r * value[i];
+                float y = (float) Math.sin(-Math.PI / 2 + angle * i) * r * value[i];
                 if (i == 0) {
                     dataPath.moveTo(x, y);
                 } else {
@@ -447,14 +440,6 @@ public class RadarChartView extends View {
      */
     public void setValue(int[] value) {
         this.value = value;
-    }
-
-    /**
-     * 设置标题
-     */
-
-    public void setValue1(List<Integer> value) {
-        this.value1 = value;
     }
 
     public void setTitles(String[] text) {

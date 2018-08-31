@@ -12,6 +12,7 @@ import com.qxb.student.common.http.task.HttpTask;
 import com.qxb.student.common.module.api.ChatRoomApi;
 import com.qxb.student.common.module.api.RongyUserApi;
 import com.qxb.student.common.module.api.UserApi;
+import com.qxb.student.common.module.api.UserStudentApi;
 import com.qxb.student.common.module.bean.ApiModel;
 import com.qxb.student.common.module.bean.UserSchoolTeacher;
 import com.qxb.student.common.module.bean.tab.Configure;

@@ -41,7 +41,7 @@ public class SpanUtils {
         return this;
     }
 
-    public SpannableStringBuilder result() {
+    public SpannableStringBuilder build() {
         return builder;
     }
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -20,25 +21,26 @@
             android:layout_marginTop="@dimen/px_20"
             android:text="@string/hint_hollander_top"
             android:textColor="@color/color_gray_deep"
-            android:textSize="@dimen/px_55"
+            android:textSize="@dimen/px_50"
             android:textStyle="bold" />
 
         <FrameLayout
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/px_550"
+            android:layout_height="@dimen/px_600"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="@dimen/px_10"
             android:layout_marginTop="@dimen/px_25"
             android:gravity="center">
 
             <com.qxb.student.common.view.custom.RadarChartView
-                android:id="@+id/radarChartView"
+                android:id="@+id/chartView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:visibility="visible"
                 app:axisNumb="2"
                 app:dotVisiable="false"
-                app:textSzie="@dimen/px_45" />
+                app:textColor="@color/color_gray_deep"
+                app:textSzie="@dimen/px_35" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -48,7 +50,7 @@
                 android:layout_marginEnd="@dimen/px_15"
                 android:text="0"
                 android:textColor="@color/color_gray_deep"
-                android:textSize="@dimen/px_45" />
+                android:textSize="@dimen/px_35" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -58,7 +60,7 @@
                 android:layout_marginTop="@dimen/px_160"
                 android:text="5"
                 android:textColor="@color/color_gray_deep"
-                android:textSize="@dimen/px_45" />
+                android:textSize="@dimen/px_35" />
         </FrameLayout>
 
         <TextView
@@ -66,7 +68,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/px_35"
-            android:layout_marginTop="@dimen/px_60"
             android:textColor="@android:color/black"
             android:textSize="@dimen/px_60" />
 
@@ -74,10 +75,11 @@
             android:id="@+id/text2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/px_30"
             android:layout_marginEnd="@dimen/px_60"
             android:layout_marginStart="@dimen/px_60"
             android:layout_marginTop="@dimen/px_30"
-            android:lineSpacingExtra="@dimen/px_8"
+            android:lineSpacingExtra="@dimen/px_6"
             android:textColor="@color/black"
             android:textSize="@dimen/px_45" />
 
@@ -89,19 +91,14 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/px_50"
-            android:layout_marginTop="@dimen/px_50"
+            android:layout_marginBottom="@dimen/px_40"
+            android:layout_marginTop="@dimen/px_40"
             android:text="@string/hint_hollander_bottom"
             android:textColor="@color/color_gray_deep"
-            android:textSize="@dimen/px_55"
+            android:textSize="@dimen/px_50"
             android:textStyle="bold" />
 
-        <com.qxb.student.common.view.abslist.ListView
-            android:id="@+id/listView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/px_60"
-            android:layout_marginStart="@dimen/px_60" />
+        <include layout="@layout/view_list" />
 
     </LinearLayout>
 

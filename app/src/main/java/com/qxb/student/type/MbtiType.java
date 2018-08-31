@@ -8,7 +8,7 @@ import com.qxb.student.R;
  */
 public enum MbtiType {
     /**
-     * E
+     * mbti类型
      */
     E("E", R.drawable.assess_mbti_e, R.color.assess_mbti_e),
     F("F", R.drawable.assess_mbti_f, R.color.assess_mbti_f),

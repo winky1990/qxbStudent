@@ -95,9 +95,9 @@ public class MobUtils {
 //            public void onResponse(String response) {
 //                ApiModel apiModel = FastOk.get(response, ApiModel.class);
 //                if (apiModel.getCODE() == 1) {
-//                    ShareResult result = FastOk.get(apiModel.getData().toString(), ShareResult.class);
-//                    if (result != null && result.isResult()) {
-//                        showDialog(context, result);
+//                    ShareResult build = FastOk.get(apiModel.getData().toString(), ShareResult.class);
+//                    if (build != null && build.isResult()) {
+//                        showDialog(context, build);
 //                    }
 //                } else {
 //                    ToastUtils.show(apiModel.getMsg());
@@ -106,7 +106,7 @@ public class MobUtils {
 //        }, params);
     }
 
-//    private static void showDialog(final Activity activity, ShareResult result) {
+//    private static void showDialog(final Activity activity, ShareResult build) {
 //        final Dialog dialog = new Dialog(activity, R.style.MyDialogStyleTop2);
 //        dialog.setContentView(R.layout.view_integral_hint);
 //        TextView textView = (TextView) dialog.findViewById(R.id.hint_text);
@@ -119,10 +119,10 @@ public class MobUtils {
 //        });
 //        User user = LiteOrmUtil.getCurUser();
 //        if (user != null) {
-//            user.setIntegral(user.getIntegral() + result.getAddIntegral());
-//            LiteOrmUtil.update(user);
+//            user.setIntegral(user.getIntegral() + build.getAddIntegral());
+//            LiteOrmUtil.updateCache(user);
 //        }
-//        textView.setText(makeKeyword(activity, String.valueOf(result.getAddIntegral())));
+//        textView.setText(makeKeyword(activity, String.valueOf(build.getAddIntegral())));
 //        dialog.setCanceledOnTouchOutside(true);//设置点击旁边，关闭dialog
 //        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 //        dialog.show();

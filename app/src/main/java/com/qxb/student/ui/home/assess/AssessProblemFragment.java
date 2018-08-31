@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -17,14 +16,12 @@ import com.qxb.student.common.Config;
 import com.qxb.student.common.Constant;
 import com.qxb.student.common.basics.AbsExpandFragment;
 import com.qxb.student.common.dialog.SimpleDialog;
-import com.qxb.student.common.listener.MultiClickUtil;
 import com.qxb.student.common.module.bean.AssessAnswer;
 import com.qxb.student.common.module.bean.AssessQuestion;
 import com.qxb.student.common.utils.AssetUtils;
 import com.qxb.student.common.utils.JsonUtils;
 import com.qxb.student.common.utils.NavigationUtils;
 import com.qxb.student.common.utils.SysUtils;
-import com.qxb.student.common.utils.ToastUtils;
 import com.qxb.student.common.view.abslist.adapter.AbsAdapter;
 
 import java.util.List;
@@ -120,7 +117,7 @@ public class AssessProblemFragment extends AbsExpandFragment {
         if (Constant.ASSETS_MBTI_ASSESS.equals(fileName)) {
             NavigationUtils.getInstance().jump(getFragment(), R.id.nav_assess_mbti_result, MbtiResultFragment.create(buffer.toString()));
         } else {
-
+            NavigationUtils.getInstance().jump(getFragment(), R.id.nav_assess_hollander_result, HollanderResultFragment.create(buffer.toString()));
         }
     }
 
@@ -142,8 +139,8 @@ public class AssessProblemFragment extends AbsExpandFragment {
     }
 
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
+    public void onDetach() {
+        super.onDetach();
         holder = null;
     }
 

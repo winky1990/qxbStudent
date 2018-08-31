@@ -31,7 +31,7 @@ public interface BaseApi {
      */
     @Headers(Config.AUTH_COMMON)
     @FormUrlEncoded
-    @POST("update/version")
+    @POST("updateCache/version")
     Call<ApiModel<AppVersion>> updateVersion(@Field("client_type")String clientType, @Field("version_code")String versionCode);
 
     /**

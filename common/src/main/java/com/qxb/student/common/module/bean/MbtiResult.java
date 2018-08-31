@@ -3,7 +3,7 @@ package com.qxb.student.common.module.bean;
 import java.util.Date;
 import java.util.List;
 
-public class BaseEvaluationResult {
+public class MbtiResult {
 
     /**
      * id

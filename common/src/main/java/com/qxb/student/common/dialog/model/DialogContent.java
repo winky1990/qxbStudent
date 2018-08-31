@@ -1,6 +1,7 @@
 package com.qxb.student.common.dialog.model;
 
 import android.support.annotation.ColorInt;
+import android.view.View;
 
 import com.qxb.student.common.dialog.DialogMode;
 
@@ -30,6 +31,10 @@ public class DialogContent {
 
     public static DialogContent loading() {
         return create(DialogMode.LOADING);
+    }
+
+    public static DialogContent custom(){
+        return create(DialogMode.CUSTOM);
     }
 
     public static DialogContent create(DialogMode dialogMode) {
@@ -68,6 +73,10 @@ public class DialogContent {
      * 内容控件高度
      */
     private int height;
+    /**
+     * 自定义视图
+     */
+    private View view;
 
     private DialogContent(DialogMode dialogMode) {
         this.dialogMode = dialogMode;
@@ -106,6 +115,15 @@ public class DialogContent {
     public DialogContent setHeight(int height) {
         this.height = height;
         return this;
+    }
+
+    public DialogContent setView(View view) {
+        this.view = view;
+        return this;
+    }
+
+    public View getView() {
+        return view;
     }
 
     public DialogMode getDialogMode() {
