@@ -3,6 +3,7 @@ package com.qxb.student.ui.home.assess;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,6 +19,7 @@ import com.qxb.student.common.basics.AbsExpandFragment;
 import com.qxb.student.common.dialog.SimpleDialog;
 import com.qxb.student.common.module.bean.AssessAnswer;
 import com.qxb.student.common.module.bean.AssessQuestion;
+import com.qxb.student.common.module.bean.attr.NavAttr;
 import com.qxb.student.common.utils.AssetUtils;
 import com.qxb.student.common.utils.JsonUtils;
 import com.qxb.student.common.utils.NavigationUtils;
@@ -102,7 +104,11 @@ public class AssessProblemFragment extends AbsExpandFragment {
     }
 
     private void toResult() {
-        SimpleDialog.with(getActivity()).loading();
+        FragmentActivity activity = getActivity();
+        if (activity == null) {
+            return;
+        }
+        SimpleDialog.with(activity).loading();
         StringBuilder buffer = new StringBuilder();
         for (AssessQuestion question : questionList) {
             for (AssessAnswer answer : question.getAnswers()) {
@@ -113,11 +119,21 @@ public class AssessProblemFragment extends AbsExpandFragment {
             }
         }
         buffer.deleteCharAt(buffer.length() - 1);
-        SimpleDialog.with(getActivity()).cancle();
+        SimpleDialog.with(activity).cancle();
         if (Constant.ASSETS_MBTI_ASSESS.equals(fileName)) {
-            NavigationUtils.getInstance().jump(getFragment(), R.id.nav_assess_mbti_result, MbtiResultFragment.create(buffer.toString()));
+            NavigationUtils.getInstance().toNavigation(activity, new NavAttr.Builder()
+                    .graphRes(R.navigation.nav_assess)
+                    .navId(R.id.nav_assess_mbti_result)
+                    .params(MbtiResultFragment.create(buffer.toString()))
+                    .build());
+            activity.finish();
         } else {
-            NavigationUtils.getInstance().jump(getFragment(), R.id.nav_assess_hollander_result, HollanderResultFragment.create(buffer.toString()));
+            NavigationUtils.getInstance().toNavigation(activity, new NavAttr.Builder()
+                    .graphRes(R.navigation.nav_assess)
+                    .navId(R.id.nav_assess_hollander_result)
+                    .params(HollanderResultFragment.create(buffer.toString()))
+                    .build());
+            activity.finish();
         }
     }
 

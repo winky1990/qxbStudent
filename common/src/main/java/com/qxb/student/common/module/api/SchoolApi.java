@@ -8,6 +8,7 @@ import com.qxb.student.common.module.bean.CollegeQuestion;
 import com.qxb.student.common.module.bean.CollegeSearchHot;
 import com.qxb.student.common.module.bean.MajorSubject;
 import com.qxb.student.common.module.bean.RecomSchool;
+import com.qxb.student.common.module.bean.SchoolCondition;
 import com.qxb.student.common.module.bean.SchoolDetail;
 import com.qxb.student.common.module.bean.SchoolVideo;
 import com.qxb.student.common.module.bean.ScoreSubject;
@@ -34,6 +35,16 @@ public interface SchoolApi {
     @FormUrlEncoded
     @POST("school/listIndex")
     Call<ApiModel<List<RecomSchool>>> getRecommendedCollegeList(@Field("province") String provinceCode);
+
+    /**
+     * 院校库
+     * @param province
+     * @return
+     */
+    @Headers(Config.AUTH_COMMON)
+    @FormUrlEncoded
+    @POST("school/schoolLibPage")
+    Call<ApiModel<SchoolCondition>> getSchoolLibPage(@Field("province") String province);
 
     /**
      * 获取志愿信息

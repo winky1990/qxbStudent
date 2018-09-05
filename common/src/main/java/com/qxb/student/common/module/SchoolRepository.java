@@ -18,6 +18,7 @@ import com.qxb.student.common.module.bean.MajorBat;
 import com.qxb.student.common.module.bean.MajorSubject;
 import com.qxb.student.common.module.bean.RecomSchool;
 import com.qxb.student.common.module.bean.RongyUser;
+import com.qxb.student.common.module.bean.SchoolCondition;
 import com.qxb.student.common.module.bean.SchoolDetail;
 import com.qxb.student.common.module.bean.SchoolNews;
 import com.qxb.student.common.module.bean.SchoolVideo;
@@ -39,6 +40,13 @@ import retrofit2.Call;
  * @date
  */
 public class SchoolRepository extends BaseRepository {
+
+    public void getSchoolLibPage(MutableLiveData<SchoolCondition> liveData) {
+        new HttpTask<SchoolCondition>()
+                .call(httpUtils.create(SchoolApi.class).getSchoolLibPage(UserCache.getInstance().getProvince()))
+                .netLive(liveData)
+                .start();
+    }
 
     public void getSchoolLiveData(MutableLiveData<List<RecomSchool>> schoolListLiveData) {
         new HttpTask<List<RecomSchool>>()

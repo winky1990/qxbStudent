@@ -57,6 +57,7 @@ public class FunctionHelper {
                 navAttr = new NavAttr.Builder().graphRes(R.navigation.nav_assess).navId(R.id.nav_assess_home).build();
                 break;
             case FunctionType.UNIVERSITY_LIB:
+                navAttr = new NavAttr.Builder().graphRes(R.navigation.nav_school).navId(R.id.nav_school_library).build();
                 break;
             case FunctionType.MAJOR_LIB:
                 break;

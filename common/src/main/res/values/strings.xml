@@ -8,6 +8,8 @@
     <string name="title_com_question">常见问题</string>
     <string name="title_mbti">您的测评结果</string>
     <string name="title_hollander">霍兰德职业兴趣测评结果</string>
+    <string name="title_school_library">院校库</string>
+
     <string name="main_home">首页</string>
     <string name="main_chat">消息</string>
     <string name="main_info">伴考</string>
@@ -232,5 +234,6 @@
 
     <string name="hint_dialog_integral">(10积分=1元)</string>
 
-
+    <string name="hint_school_library_tag1">在招批次</string>
+    <string name="hint_school_library_tag2">所在地</string>
 </resources>

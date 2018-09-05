@@ -16,4 +16,8 @@
     <color name="assess_hollander_a">#e8f9f3</color>
     <color name="assess_hollander_e">#f2f2f2</color>
     <color name="assess_hollander_s">#f3f3ff</color>
+
+    <color name="press_a">#FFB3FDE3</color>
+    <color name="press_r">#FFA9DEFF</color>
+    <color name="press_c">#FFFDE2D5</color>
 </resources>

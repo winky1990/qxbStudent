@@ -3,6 +3,7 @@ package com.qxb.student.common.dialog;
 import android.arch.lifecycle.ViewModelProviders;
 import android.support.annotation.ColorInt;
 import android.support.annotation.FloatRange;
+import android.support.annotation.NonNull;
 import android.support.annotation.StringRes;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -31,7 +32,7 @@ public class SimpleDialog {
     private static final AtomicReference<CustomDialogFragment> REFERENCE = new AtomicReference<>();
     private final String TAG = "SimpleDialog";
 
-    public static SimpleDialog with(FragmentActivity activity) {
+    public static SimpleDialog with(@NonNull FragmentActivity activity) {
         return new SimpleDialog(activity);
     }
 

@@ -12,5 +12,7 @@
     <fragment
         android:id="@+id/nav_school_question"
         android:name="com.qxb.student.ui.home.school.question.SchoolComQuestionListFragment" />
-
+    <fragment
+        android:id="@+id/nav_school_library"
+        android:name="com.qxb.student.ui.home.school.SchoolLibraryRetrieveFragment" />
 </navigation>
