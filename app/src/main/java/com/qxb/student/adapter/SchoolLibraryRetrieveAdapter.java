@@ -1,16 +1,9 @@
 package com.qxb.student.adapter;
 
-import android.animation.AnimatorInflater;
-import android.animation.StateListAnimator;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
-import android.content.res.ColorStateList;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.RippleDrawable;
-import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.TextView;
