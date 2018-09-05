@@ -22,19 +22,12 @@
                 android:resource="@xml/rc_file_path" />
         </provider>
 
-        <activity
-            android:name=".basics.NavHostActivity"
-            android:label="" />
-        <activity
-            android:name=".rong.ChatActivity"
-            android:label="" />
+        <activity android:name=".basics.NavHostActivity" />
+        <activity android:name=".rong.ChatActivity" />
         <activity
             android:name=".basics.WebActivity"
-            android:hardwareAccelerated="true"
-            android:label="" />
-        <activity
-            android:name="com.mob.tools.MobUIShell"
-            android:label="" />
+            android:hardwareAccelerated="true" />
+        <activity android:name="com.mob.tools.MobUIShell" />
         <activity
             android:name=".basics.VideoPlayActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
