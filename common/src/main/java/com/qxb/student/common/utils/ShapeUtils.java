@@ -51,10 +51,14 @@ public class ShapeUtils {
 
     public void intoView(View view) {
         GradientDrawable drawable = new GradientDrawable();
-        drawable.setColor(normalColor);
+        if (normalColor != -1) {
+            drawable.setColor(normalColor);
+        }
         drawable.setCornerRadius(radius);
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-            view.setBackground(new RippleDrawable(ColorStateList.valueOf(pressColor), drawable, null));
+            if (pressColor != -1) {
+                view.setBackground(new RippleDrawable(ColorStateList.valueOf(pressColor), drawable, null));
+            }
             view.setStateListAnimator(AnimatorInflater.loadStateListAnimator(view.getContext(), R.animator.btn_press));
         } else {
             view.setBackground(drawable);
